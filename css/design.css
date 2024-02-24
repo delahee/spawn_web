@@ -1,0 +1,138 @@
+
+body{
+	background-color: #89d6f3;
+	
+	color:#ffffff;
+	font-family: "dinosaur", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+div{
+	margin:0;
+	padding:0;
+}
+
+.logo{
+	max-height:200px;
+	object-fit:cover;
+}
+
+a:link{
+	color:#6754A0;
+	text-decoration: underline dotted;
+}
+
+
+a:hover{
+	color:#64519e;
+	
+}
+
+.container{
+	margin:auto;
+	padding:20px;
+}
+
+.footer{
+	margin:auto;
+}
+.menu{
+	
+}
+
+.nav{
+	margin-top:-30px;
+}
+
+img.menu .logo{
+	object-fit: contain;
+	height:200px;
+	background-repeat: no-repeat;
+	display:flex;
+	min-width:200px;	
+}
+
+ul .menu{
+}
+
+li .menu{
+	font-family: "dinosaur", sans-serif;
+	font-weight: 900;
+	font-style: normal;
+}
+
+a.menuItem{
+	display:flex;
+	padding:10px;
+	vertical-align: bottom;
+	flex-direction:column;
+	font-family: "dinosaur", sans-serif;
+	font-weight: 900;
+	font-style: normal;
+	font-size: 1.5em;
+}
+
+.outline_purple{
+	text-stroke: 2px #352b52;
+	-webkit-text-stroke: 2px #352b52;
+}
+
+.outline_white{
+	text-stroke: 1px #ffffff;
+	-webkit-text-stroke: 1px #ffffff;
+}
+
+
+.title{
+	font-family: "Open Sans", sans-serif;
+	color:#ffffff;
+	font-weight: 900;
+	font-size: 2em;
+	text-stroke: 2px #352b52;
+	-webkit-text-stroke: 2px #352b52;
+}
+
+.smtitle{
+	font-family: "Open Sans", sans-serif;
+	color:#ffffff;
+	font-weight: 900;
+	font-size: 1.25em;
+	text-stroke: 1px #352b52;
+	-webkit-text-stroke: 1px #352b52;
+}
+
+.text{
+	font-family: "Open Sans", sans-serif;
+	color:#352b52;
+	font-weight: 900;
+	font-size: 1em;
+}
+
+.prog{
+	color:#DD2563;
+}
+
+.hilit{
+	text-stroke: none;
+	-webkit-text-stroke: none;
+	color:#DD2563;
+}
+
+.text span{
+	text-stroke: none;
+	-webkit-text-stroke: none;
+	color:#DD2563;
+}
+
+
+.reg{
+	text-stroke: none;
+	-webkit-text-stroke: none;
+	color:#F94E88;
+}
+
+h2.row{
+	margin:auto;
+	padding:15px;
+}
