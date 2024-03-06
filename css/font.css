@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-Thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-ThinItalic.otf') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/DINosaur-BlackItalic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
