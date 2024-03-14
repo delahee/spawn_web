@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>spawn! - Le festival du jeu vidéo d'Angoulême</title>
+    <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/index.css">
@@ -12,13 +13,16 @@
 </head>
 <script>
     let slideIndex = 1;
+    let carInt;
 
     function
-    nextSlide() {
+    nextSlide(stop=false) {
+        if (stop && carInt) clearInterval(carInt);
         showSlide(slideIndex += 1);
     }
 
-    function prevSlide() {
+    function prevSlide(stop=false) {
+        if (stop && carInt) clearInterval(carInt);
         showSlide(slideIndex -= 1);
     }
 
@@ -32,10 +36,15 @@
             slideIndex = slides.length;
         }
         for (let i = 0; i < slides.length; i++) {
+            slides[i].style.animation = '0.3s slide-offscreen';
             slides[i].style.display = 'none';
+            
         }
-        if (slides[slideIndex - 1])
+        if (slides[slideIndex - 1]){
             slides[slideIndex - 1].style.display = 'block';
+            slides[slideIndex - 1].style.animation = '0.3s slide-left';
+
+        }
     }
 
     async function fetchImages(directory) {
@@ -77,6 +86,10 @@
         });
         
         showSlide(slideIndex);
+        
+        carInt = setInterval(() => {
+            nextSlide();
+        }, 3300);
 
         fetchGames("res/img/games", "res/games.json").then(games => {
             console.log(games);
@@ -127,8 +140,8 @@
             </div>
             <div class="one-half column" style="flex: auto; flex-basis: 340px; margin: 0 auto;">
                 <div id="img-car" class="img-container img-container-car">
-                    <span class="prev" onclick="prevSlide()">&#10094;</span>
-                    <span class="next" onclick="nextSlide()">&#10095;</span>
+                    <span class="prev" onclick="prevSlide(true)">&#10094;</span>
+                    <span class="next" onclick="nextSlide(true)">&#10095;</span>
                 </div>
             </div>
         </div>
@@ -209,36 +222,38 @@
             </p>
             <div id="games" class="projects-grid mt-3">
             </div>
-            <p class="mb-2 align-center">.......</p>
+            <p class="mb-2 align-center mt-2">et bien plus encore...</p>
             <hr class="mb-0">
             <p class="mt-3 align-center fw-600">
-                3 tables rondes et 1 interview animées par <a href="https://twitter.com/_DollyWood_">Dolly Wood</a> et <a href="https://twitter.com/Quineapple">Quineapple</a>
-                <br>
+                3 tables rondes et 1 interview animées par
+		<br>
+		<a href="https://twitter.com/_DollyWood_">Dolly Wood</a>, créatrice de contenus et Camille ALEXANDRE (<a href="https://twitter.com/Quineapple">Quineapple</a>), co-rédactrice en chef et présentatrice de Jour de Play pour ARTE
+                <br><br>
                 1 conférence de <a href="https://www.linkedin.com/in/perfectwebmarketer/">Jennifer LUFAU</a>
                 <br>
                 1 Podcast “Le Cosy Corner” par <a href="https://twitter.com/Elmedoc">Médoc</a> et <a href="https://twitter.com/El_Mogurito">Moguri</a>
+                <br>
+                3 playformances
             </p>
             <div class="mt-2 planning-container">
-                <!-- <div class="planning-element">
+                <div class="planning-element">
                     <div class="time">11h00 <br>-<br> 12h00</div>
                     <div class="title">La place du jeu vidéo au sein de la famille</div>
                     <div class="description black">
                         <p class="align-left mb-0">
-                            <a href="http://">Diraen</a>, cocréatrice de l'abcdpodcast, producer chez DON'T NOD, blogueuse
+                            <a href="https://twitter.com/diraen">Diraen</a>, cocréatrice de l'abcdpodcast, producer chez DON'T NOD, blogueuse
                             <br><br>
-                            <a href="http://">Vanessa LALO</a>
-                            <br><br>
-                            <a href="http://">Tanguy TAILLANDIER</a>, ludothécaire, conseiller numérique du CSCS MJC Rives de Charente
+                            <a href="https://www.linkedin.com/in/tanguy-taillandier-554a05228/">Tanguy TAILLANDIER</a>, conseiller et animateur numérique  - CSCS / MJC Rives de Charente
                         </p>
                     </div>
                     <div class="note">Table ronde animée par Dolly Wood</div>
-                </div> -->
+                </div>
                 <div class="planning-element">
                     <div class="time">12h00 <br>-<br> 13h00</div>
                     <div class="title lavender">Être une joueuse compétitive en 2024</div>
                     <div class="description black">
                         <p class="align-left mb-0">
-                            <a href="https://twitter.com/amelitha_jg">Amelitha</a>, joueuse compétitive - Collectif Fight Forward
+                            <a href="https://twitter.com/amelitha_jg" style="text-transform:uppercase">Amelitha</a>, joueuse compétitive - Collectif Fight Forward
                         </p>
                     </div>
                     <div class="note lavender">Interview par Dolly Wood et Quineapple</div>
@@ -274,7 +289,7 @@
                             <br><br>
                             <a href="https://twitter.com/_DollyWood_">Dolly Wood</a>, créatrice de contenu
                             <br><br>
-                            <a href="https://www.linkedin.com/in/cyril-carincotte-b7117a60/">Cyril Carincotte</a>,
+                            <a href="https://www.linkedin.com/in/cyril-carincotte-b7117a60/">Cyril Carincotte</a>, Cinematic tech programmer
                         </p>
                     </div>
                     <div class="note">Table ronde animée par Quineapple</div>
@@ -291,6 +306,18 @@
                     </div>
                     <div class="note purple">Podcast</div>
                 </div>
+                <!-- <div class="planning-element">
+                    <div class="time">17h00 <br>-<br> 18h30</div>
+                    <div class="title purple"><a href="https://soundcloud.com/lecosycorner">Le Cosy Corner</a></div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://twitter.com/Elmedoc">Médoc</a>, acteur, réalisateur, producteur et scénariste
+                            <br><br>
+                            <a href="https://twitter.com/El_Mogurito">Moguri</a>, acteur, réalisateur, producteur et scénariste
+                        </p>
+                    </div>
+                    <div class="note purple">Podcast</div>
+                </div> -->
             </div>
         </section>
         <section id="spawn-pro mt-3">
@@ -321,25 +348,24 @@
                 </p>
             </div>
             <div class="mt-2 pb-3 planning-container planning-alt">
-                <div class="planning-element">
-                    <div class="time">15h00 <br>-<br> 15h10</div>
+               <div class="planning-element">                                                                                              <div class="time">15h00 <br>-<br> 15h10</div>
                     <div class="title">Introduction</div>
                     <div class="description black">
                         <p class="align-left mb-0">
-                            <a href="https://www.linkedin.com/in/mynesta/">Marie-Charlotte YNESTA</a>, déléguée générale - SO· Games
+<a href="https://www.linkedin.com/in/mynesta/">Marie-Charlotte YNESTA</a>, déléguée générale - SO· Games
+<br>
+<a href="https://www.linkedin.com/in/indira-valdivia-vizarreta-abb3b6206/">Indira VALDIVIA-VIZARRETA</a>, responsable des partenariats et des relations internationales - Cnam-Enjmin
                         </p>
-                    </div>
-                    <div class="note"></div>
+		    </div>
+		<div class="note">Conférence</div> 
                 </div>
                 <div class="planning-element">
                     <div class="time">15h10 <br>-<br> 15h40</div>
-                    <div class="title">Financement en Région Nouvelle-Aquitaine</div>
-                    <div class="description black">
-                        <p class="align-left mb-0">
-                            <a href="https://www.linkedin.com/in/marie-perronnet-606922159/">Marie PERRONNET</a>, chargée de mission filière image et jeu vidéo - Région Nouvelle-Aquitaine
-                        </p>
+                    <div class="title"></div>
+                    <div class="description black" style="">
+                        
                     </div>
-                    <div class="note">Conférence</div>
+                    <div class="note"></div>
                 </div>
                 <div class="planning-element">
                     <div class="time">15h50 <br>-<br> 16h20</div>
@@ -353,10 +379,10 @@
                 </div>
                 <div class="planning-element">
                     <div class="time">16h25 <br>-<br> 17h05</div>
-                    <div class="title">Baladins : le pre-mortem</div>
+                    <div class="title">Péripéties du dev d'un jeu d'aventure : <br>le cas de Baladins</div>
                     <div class="description black">
                         <p class="align-left mb-0">
-                            <a href="https://www.linkedin.com/in/jeanico/">Jean NICOLAS</a>, business admin & marketing - Seed by Seed
+                            <a href="https://www.linkedin.com/in/jeanico/">Jean NICOLAS</a>, admin & marketing - Seed by Seed
                             <br>
                             <a href="https://www.linkedin.com/in/thaïs-arias-6967b676/">Thaïs ARIAS</a>, game designer - Seed by Seed
                         </p>
@@ -375,33 +401,33 @@
                 </div>
                 <div class="planning-element">
                     <div class="time">17h55 <br>-<br> 18h40</div>
-                    <div class="title purple">Auto édition : enseignement de la création d'une ligne d'édition</div>
+                    <div class="title">Auto édition : enseignement de la création d'une ligne d'édition</div>
                     <div class="description black">
                         <p class="align-left mb-0">
                             <a href="https://www.linkedin.com/in/davidelahee/">David "Blackmagic" ELAHEE</a>, président, développeur et éditeur - Headbang Club
                         </p>
                     </div>
-                    <div class="note purple">Conférence</div>
+                    <div class="note">Conférence</div>
                 </div>
                 <div class="planning-element">
                     <div class="time">18h40 <br>-<br> 19h20</div>
-                    <div class="title purple">Modalités de financement</div>
+                    <div class="title">Modalités de financement</div>
                     <div class="description black">
                         <p class="align-left mb-0">
                             <a href="https://www.linkedin.com/in/frédéric-baillard/">Frédéric BAILLARD</a>, responsable filière image & son - Crédit Agricole Charente-Périgord
                         </p>
                     </div>
-                    <div class="note purple">Conférence</div>
+                    <div class="note">Conférence</div>
                 </div>
                 <div class="planning-element">
                     <div class="time">19h20 <br>-<br> 19h30</div>
-                    <div class="title purple">Mots de fin</div>
+                    <div class="title">Mots de fin</div>
                     <div class="description black">
                         <p class="align-left mb-0">
                             <a href="https://www.linkedin.com/in/mynesta/">Marie-Charlotte YNESTA</a>, déléguée générale - SO· Games
                         </p>
                     </div>
-                    <div class="note purple"></div>
+                    <div class="note"></div>
                 </div>
             </div>
         </section>
@@ -436,7 +462,7 @@
                 </div>
             </div>
             <p class="mt-3 align-center">
-                Merci à tous nos partenaires de leur confiance.
+                Merci à tous nos partenaires de leur confiance
             </p>
             <div class="row align-center mt-3">
                 <div class="twelve columns">
@@ -475,11 +501,11 @@
             <div class="row align-center mt-4 mb-2">
                     <a href="https://www.angouleme.fr/annuaire/gamers-generation/" class="mr-1">Gamers Generation</a>
                     <span class="mr-1">·</span>
-                    <a href="https://www.angouleme.fr/annuaire/association-angoumoisine-de-jeux-et-dhistoire-aajh/" class="mr-1">l’AAJH</a>
+                    <a href="https://www.angouleme.fr/annuaire/association-angoumoisine-de-jeux-et-dhistoire-aajh/" class="mr-1">AAJH</a>
                     <span class="mr-1">·</span>
                     <a href="https://legroscorbeau.com" class="mr-1">Le Gros Corbeau</a>
                     <span class="mr-1">·</span>
-                    <a href="https://www.grandangouleme.fr/sortir-et-decouvrir/culture/lalpha-mediatheque/" class="mr-1">l’Alpha médiathèque</a>
+                    <a href="https://www.grandangouleme.fr/sortir-et-decouvrir/culture/lalpha-mediatheque/" class="mr-1">L’Alpha</a>
                     <span class="mr-1">·</span>
                     <a href="https://www.cscs-rivesdecharente.com" class="mr-1">MJC Rives2Charente</a>
                     <span class="mr-1">·</span>
@@ -525,6 +551,49 @@
                         <p class="mt-2 mb-0">
                             <b>Communication</b>
                             <br>Capucine CHAUFFOURIER : <a href="mailto:capucine@sogames.org">capucine@sogames.org</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h3 class="mt-3 align-center">
+                    Équipes
+            </h3>
+            <div class="row align-center mt-3 stretch pb-3">
+                <div class="align-center one-half column white black pa-3">
+                    <div class="flex-center v-center">
+                        <p class="blue"><b>Cnam-Enjmin</b></p>
+                        <p>
+                            <b>Stéphanie BOCQUILLON BREL</b>, responsable communication
+			    <br><br>
+			    <b>Axel BUENDIA</b>, directeur
+			    <br><br>
+			    <b>May HUBERT</b>, assistante de formation et chargée d’événementiel
+                            <br><br>
+		            <b>Loïs LESPES</b>, développeur
+                            <br><br>
+			    <b>Christophe MAQUET</b>, technicien support
+                            <br><br>
+			    <b>Linda MIKHAIL</b>, chargée de communication
+                            <br><br>
+			    <b>Indira VALDIVIA-VIZARRETA</b>, responsable des partenariats et des relations internationales
+			    <br><br>
+			    <b>Margaux VIRIEU</b>, secrétaire générale
+                        </p>
+                    </div>
+                </div>
+                <div class="align-center one-half column white black pa-3">
+                    <div class="flex-center">
+                        <p class="blue"><b>SO· Games</b></p>
+			<p>
+			   <b>Capucine CHAUFFOURIER</b>, chargée de communication
+			   <br><br>
+			   <b>David ELAHEE</b>, président, web designer, curation, programmation, suivi, cofondateur du FJA
+                           <br><br>
+			   <b>Sébastien FONTAINE</b>, logistique, cofondateur du FJA
+                           <br><br>
+			   <b>Mylène LOURDEL</b>, vice-présidente événement, programmation, curation des conférences grand public
+                           <br><br>
+			   <b>Marie-Charlotte YNESTA</b>, déléguée générale
                         </p>
                     </div>
                 </div>
