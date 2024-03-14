@@ -361,3 +361,26 @@ nav.menu ul li:hover{
         width: 100%;
     }
 }
+
+.img-car img {
+    animation: 0.3s slide-left;
+}
+
+@keyframes slide-left {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 0%;
+    }
+  }
+  
+@keyframes slide-offscreen {
+    from {
+      margin-left: 0%;
+    }
+    to {
+      margin-left: -100%;
+    }
+  }
+  
