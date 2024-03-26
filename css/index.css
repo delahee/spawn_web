@@ -327,6 +327,28 @@ nav.menu ul li:hover{
     background-color: var(--c-primary-dark);
 }
 
+.orga_logo img {
+    max-width: 100%;
+}
+
+.partenaires .partenaires_logo{
+    justify-content: space-between;
+}
+
+.partenaires .partenaires_logo .twoo.columns.mt-4{
+    margin-left: 0;
+}
+
+.partenaires .partenaires_logo .twoo.columns.mt-4 img{
+    width: 100%;
+}
+
+@media (max-width: 550px) {
+    .partenaires .partenaires_logo .twoo.columns.mt-4 img{
+        width: 150px;
+    }
+}
+
 @media (max-width: 1232px) {
     header .row {
         justify-content: center;
