@@ -81,3 +81,51 @@
     font-weight: 900;
     font-style: italic;
 }
+/***/
+
+@font-face {
+    font-family: 'InriaSans';
+    src: url('../res/type/InriaSans-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InriaSans';
+    src: url('../res/type/InriaSans-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'InriaSans';
+    src: url('../res/type/InriaSans-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINosaur';
+    src: url('../res/type/InriaSans-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+ 
+
+@font-face {
+    font-family: 'InriaSans';
+    src: url('../res/type/InriaSans-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InriaSans';
+    src: url('../res/type/InriaSans-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+ 
+
