@@ -501,7 +501,7 @@ h1 .logo {
         #propos .infos .rectangle7 .upper{
             font-family: "DINosaur";
             font-weight: 500;
-            font-size: 28px;
+            font-size: 27px;
         }
 
         #propos .infos .rectangle8{
@@ -623,6 +623,31 @@ h1 .logo {
             align-items: center;
             margin-bottom :5%;
         }
+
+@media (max-width: 320px) { 
+    #propos .infos .rectangle7{
+        width: 17%;
+        margin-right: 15%;
+    }
+
+    #propos .infos .rectangle5{
+        width: 24%;
+    }
+    #propos .infos .rectangle6{
+        width: 23%;
+    }
+    #propos .infos .rectangle8{
+        width: 24%;
+        margin-left: 19%;
+    }
+    #propos .infos .rectangle9{
+        width: 25%;
+    }
+    #propos .infos .rectangle10{
+        width: 28%;
+        margin-right: 2%;
+    }
+}
 
 @media (max-width: 768px) { 
     #propos .row .rectangle2{
@@ -943,23 +968,16 @@ h1 .logo {
             flex-direction: row;
         }
 
-        #organisateurs .image .logo-magelis-blanc{
-            width: 17.5%;
-            object-fit: cover;
-            margin-bottom: 3%;
-        }
-
+        
         #organisateurs .image .so-games-blanc-plan-2{
-            width: 17.5%;
+            height: 100px;
             margin-left: 5%;
             object-fit: cover;
         }
 
         #organisateurs .image .element-enjmin-2{
-            width: 17.5%;
-            margin-left: 5%;
+            height: 75px;
             object-fit: cover;
-            margin-bottom: 2%;
         }
 
 @media (max-width: 768px) { 
@@ -1038,6 +1056,12 @@ h1 .logo {
             margin-bottom: 3%;
             margin-left: 15%;
             width: 72.5%;
+        }
+
+        #partenaires .image .logo-magelis-blanc{
+            height: 50px;
+            object-fit: cover;
+            margin-bottom: 1%;
         }
 
         #partenaires .image .arte-logo-blanc{
@@ -1169,6 +1193,13 @@ h1 .logo {
             width: 50%;
         }
 
+        @media(max-width: 320px){
+            #infos .map{
+                margin-left: 12.5%;
+                width: 75%;
+            }
+        }
+
         #infos .deplacement{
             display: flex;
             width: 50%;
@@ -1188,7 +1219,6 @@ h1 .logo {
             justify-content: space-evenly;
             align-items: baseline;
             margin-right: 20%;
-
         }
 
         #infos .image .SUV{
@@ -1201,6 +1231,21 @@ h1 .logo {
         #infos .image .shuttle-bus {
             width: 62px;
             height: 62px;
+        }
+
+        @media(max-width: 320px){
+            #infos .image{
+                margin-right: 17.5%;
+            }
+            #infos .image .SUV{
+                width: 50px;
+                height: 50px;
+                margin-left: 50px;
+            }
+            #infos .image .shuttle-bus{
+                width: 50px;
+                height: 50px;
+            }
         }
 
         #infos .deplacement .rectangle{
@@ -1431,8 +1476,8 @@ h1 .logo {
         text-decoration: none;
         border: 0 none;
         display: block;
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        height: 35px;
         background-color: #372752;
 
         -webkit-transition: all 0.2s ease-in-out;
@@ -1449,8 +1494,9 @@ h1 .logo {
     #go-top a:hover { background-color: #0F9095; }
 
     .smoothscroll {
-        margin-top: -18%;
-        margin-left: -17%;
+        margin-top: -25%;
+        margin-left: -25%;
+        width: 150%;
     }
 }
 
