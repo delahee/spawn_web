@@ -154,7 +154,7 @@ h1 .logo {
             line-height: 60px;
         }
     #banner .rectangle{
-        width: 50%;
+        width: 82%;
         margin-left: 0%;
 
     }
@@ -166,19 +166,13 @@ h1 .logo {
     }
 }
 
-@media (max-width: 375px) {
-    #banner .content{
-        width: 42% !important;
-    }
-}
-
 @media (max-width: 425px) {
     #banner .content .text-wrapper {
-            font-size: 50% !important;
+            font-size: 75% !important;
             line-height: 40px;
         }
     #banner .content{
-        width: 39%;
+        width: 55%;
         display: flex;
         margin-top: 20%;
     }
@@ -637,15 +631,15 @@ h1 .logo {
         width: 23%;
     }
     #propos .infos .rectangle8{
-        width: 24%;
+        width: 20%;
         margin-left: 19%;
     }
     #propos .infos .rectangle9{
-        width: 25%;
+        width: 20%;
     }
     #propos .infos .rectangle10{
-        width: 28%;
-        margin-right: 2%;
+        width: 20%;
+        margin-right: 13%;
     }
 }
 
