@@ -1,0 +1,1453 @@
+p {
+    color: white;
+    font-size: 20px;
+    font-family: Inria Sans;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+
+.frame {
+    background-color: #624592;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.frame .div {
+    background-color: #624592;
+    overflow: hidden;
+    width: 1920px;
+    height: 7912px;
+    position: relative;
+}
+
+.frame .overlap {
+    position: absolute;
+    width: 1339px;
+    height: 638px;
+    top: 1034px;
+    left: 301px;
+}
+
+.frame .overlap-group {
+    position: absolute;
+    width: 561px;
+    height: 317px;
+    top: 321px;
+    left: 94px;
+}
+
+.frame .rectangle {
+    position: absolute;
+    width: 525px;
+    height: 283px;
+    top: 34px;
+    left: 36px;
+    background-color: #573e81;
+    border-radius: 25px 0px 25px 25px;
+}
+
+.frame .rectangle-2 {
+    position: absolute;
+    width: 525px;
+    height: 283px;
+    top: 0;
+    left: 0;
+    border-radius: 25px 0px 25px 25px;
+    border: 1px solid;
+    border-color: #ffffff;
+}
+
+.frame .text-wrapper {
+    position: absolute;
+    width: 183px;
+    top: 33px;
+    left: 171px;
+    font-family: "DINosaur-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-box {
+    color: white;
+    font-size: 24px;
+    font-family: "Inria Sans";
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.frame .samedi-avril {
+    position: absolute;
+    width: 201px;
+    height: 47px;
+    top: 140px;
+    left: 159px;
+}
+
+.frame .overlap-2 {
+    position: absolute;
+    width: 1339px;
+    height: 604px;
+    top: 0;
+    left: 0;
+}
+
+.frame .rectangle-3 {
+    position: absolute;
+    width: 525px;
+    height: 283px;
+    top: 291px;
+    left: 734px;
+    background-color: #573e81;
+    border-radius: 25px 25px 25px 0px;
+}
+
+.frame .group-spawn_revient {
+    flex-grow: 0;
+    background-color: #624592;
+}
+
+.frame .text-wrapper-35 {
+    color: white;
+    font-size: 96px;
+    font-family: "DINosaur";
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.frame .text-wrapper-36 {
+    color: white;
+    font-size: 40px;
+    font-family: "DINosaur";
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.frame .text-wrapper-37 {
+    color: white;
+    font-size: 20px;
+    font-family: "Inria Sans";
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.frame .group {
+    position: absolute;
+    width: 1339px;
+    height: 299px;
+    top: 0;
+    left: 0;
+}
+
+.frame .spawn-revient-pour {
+    position: absolute;
+    width: 1306px;
+    height: 213px;
+    top: 42px;
+    left: 1px;
+}
+
+.frame .rectangle-4 {
+    position: absolute;
+    width: 525px;
+    height: 283px;
+    top: 321px;
+    left: 699px;
+    border-radius: 25px 25px 25px 0px;
+    border: 1px solid;
+    border-color: #ffffff;
+}
+
+.frame .o {
+    position: absolute;
+    top: 354px;
+    left: 928px;
+    font-family: "DINosaur-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .cnam-enjmin-btiment {
+    position: absolute;
+    width: 320px;
+    height: 97px;
+    top: 445px;
+    left: 800px;
+}
+
+.frame .overlap-3 {
+    position: absolute;
+    width: 1917px;
+    height: 386px;
+    top: 4187px;
+    left: 1px;
+    background-color: #755c9f;
+}
+
+.frame .PROPOS-wrapper {
+    position: absolute;
+    width: 1339px;
+    height: 59px;
+    top: 7px;
+    left: 289px;
+    background-color: #755c9f;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #ffffff;
+}
+
+.frame .PROPOS {
+    position: relative;
+    width: 987px;
+    height: 37px;
+    top: 6px;
+    left: 175px;
+}
+
+.frame .PROPOS-2 {
+    position: absolute;
+    width: 987px;
+    top: -1px;
+    left: 35px;
+    font-family: "DINosaur-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 31px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .spawn-pro-est-un {
+    position: absolute;
+    width: 1337px;
+    top: 112px;
+    left: 299px;
+    font-family: "Inria Sans-Bold";
+    font-weight: 400;
+    color: transparent;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .span {
+    font-weight: 700;
+    color: #3bbde6;
+}
+
+.frame .text-wrapper-2 {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.frame .text-wrapper-3 {
+    font-family: "Inria Sans-Regular";
+    color: #ffffff;
+}
+
+.frame .overlap-4 {
+    position: absolute;
+    width: 1917px;
+    height: 355px;
+    top: 2632px;
+    left: 1px;
+    background-color: #755c9f;
+}
+
+.frame .component {
+    position: absolute;
+    width: 455px;
+    height: 83px;
+    top: 115px;
+    left: 705px;
+    border-radius: 50px;
+    border: 1px solid;
+    border-color: #ffffff;
+}
+
+.frame .sinscrire-wrapper {
+    position: relative;
+    height: 83px;
+    background-color: #624592;
+    border-radius: 50px;
+}
+
+.frame .sinscrire {
+    position: absolute;
+    width: 295px;
+    height: 27px;
+    top: 27px;
+    left: 80px;
+}
+
+.frame .overlap-5 {
+    position: absolute;
+    width: 1339px;
+    height: 59px;
+    top: 0;
+    left: 289px;
+}
+
+.frame .img {
+    position: absolute;
+    width: 193px;
+    height: 42px;
+    top: 9px;
+    left: 580px;
+}
+
+.frame .rectangle-5 {
+    position: absolute;
+    width: 1339px;
+    height: 59px;
+    top: 0;
+    left: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #ffffff;
+}
+
+.frame .overlap-6 {
+    position: absolute;
+    width: 1917px;
+    height: 570px;
+    top: 5216px;
+    left: 1px;
+    background-color: #755c9f;
+}
+
+.frame .logo-blanc-grand {
+    position: absolute;
+    width: 105px;
+    height: 75px;
+    top: 208px;
+    left: 1269px;
+    object-fit: cover;
+}
+
+.frame .p {
+    position: absolute;
+    width: 1334px;
+    top: 102px;
+    left: 298px;
+    font-family: "Inria Sans-Regular";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .comit-thique-merci {
+    position: absolute;
+    width: 1334px;
+    top: 444px;
+    left: 298px;
+    font-family: "Inria Sans-Regular";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .text-wrapper-4 {
+    font-family: "Inria Sans-Regular";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.frame .text-wrapper-5 {
+    text-decoration: underline;
+}
+
+.frame .arte-logo-blanc {
+    position: absolute;
+    width: 122px;
+    height: 31px;
+    top: 230px;
+    left: 289px;
+    object-fit: cover;
+}
+
+.frame .WIG-logo-fullwhite {
+    position: absolute;
+    width: 99px;
+    height: 68px;
+    top: 212px;
+    left: 649px;
+    object-fit: cover;
+}
+
+.frame .logo-na-horiz-BLANC {
+    position: absolute;
+    width: 141px;
+    height: 66px;
+    top: 213px;
+    left: 965px;
+    object-fit: cover;
+}
+
+.frame .absolument-angoulme {
+    position: absolute;
+    width: 106px;
+    height: 90px;
+    top: 200px;
+    left: 1129px;
+    object-fit: cover;
+}
+
+.frame .fullwhite {
+    position: absolute;
+    width: 166px;
+    height: 38px;
+    top: 226px;
+    left: 773px;
+    object-fit: cover;
+}
+
+.frame .overlap-7 {
+    position: absolute;
+    width: 1339px;
+    height: 61px;
+    top: 5px;
+    left: 289px;
+}
+
+.frame .div-wrapper {
+    position: absolute;
+    width: 325px;
+    height: 37px;
+    top: 0;
+    left: 507px;
+}
+
+.frame .PROPOS-3 {
+    position: relative;
+    height: 37px;
+    border-radius: 10px;
+}
+
+.frame .PROPOS-4 {
+    position: absolute;
+    width: 325px;
+    top: -1px;
+    left: 12px;
+    font-family: "DINosaur-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 31px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .rectangle-6 {
+    position: absolute;
+    width: 1339px;
+    height: 59px;
+    top: 2px;
+    left: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #ffffff;
+}
+
+.frame .gamers-generation-l {
+    position: absolute;
+    top: 368px;
+    left: 302px;
+    font-family: "Inria Sans-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .text-wrapper-6 {
+    font-family: "Inria Sans-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 22px;
+    letter-spacing: 0;
+}
+
+.frame .SELL-h-complet-BLANC {
+    position: absolute;
+    width: 194px;
+    height: 81px;
+    top: 205px;
+    left: 436px;
+    object-fit: cover;
+}
+
+.frame .LOGO-UNESCO {
+    position: absolute;
+    width: 272px;
+    height: 71px;
+    top: 209px;
+    left: 1391px;
+    object-fit: cover;
+}
+
+.frame .overlap-8 {
+    position: absolute;
+    width: 430px;
+    height: 148px;
+    top: 1724px;
+    left: 290px;
+    border-radius: 25px;
+}
+
+.frame .rectangle-7 {
+    position: absolute;
+    width: 430px;
+    height: 148px;
+    top: 0;
+    left: 0;
+    background-color: #37275240;
+    border-radius: 25px;
+    transform: rotate(-180.00deg);
+}
+
+.frame .plus-de-jeux {
+    position: absolute;
+    width: 342px;
+    height: 95px;
+    top: 27px;
+    left: 35px;
+}
+
+.frame .overlap-9 {
+    position: absolute;
+    width: 1339px;
+    height: 158px;
+    top: 2346px;
+    left: 290px;
+    border-radius: 25px;
+}
+
+.frame .rectangle-8 {
+    position: absolute;
+    width: 1339px;
+    height: 158px;
+    top: 0;
+    left: 0;
+    background-color: #37275240;
+    border-radius: 25px;
+    transform: rotate(-180.00deg);
+}
+
+.frame .vnement-familial {
+    position: absolute;
+    width: 1245px;
+    height: 75px;
+    top: 42px;
+    left: 46px;
+    color: white;
+    font-size: 32px;
+    font-family: Inria Sans;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.frame .overlap-10 {
+    position: absolute;
+    width: 1917px;
+    height: 880px;
+    top: 2987px;
+    left: 1px;
+}
+
+.frame .rectangle-9 {
+    position: absolute;
+    width: 1917px;
+    height: 880px;
+    top: 0;
+    left: 0;
+    background-color: #37275240;
+    transform: rotate(-180.00deg);
+}
+
+.frame .PROPOS-5 {
+    position: absolute;
+    width: 709px;
+    height: 45px;
+    top: 39px;
+    left: 604px;
+}
+
+.frame .PROPOS-6 {
+    position: absolute;
+    width: 709px;
+    top: -1px;
+    left: 0;
+    font-family: "DINosaur";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 31px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .rectangle-10 {
+    position: absolute;
+    width: 1339px;
+    height: 59px;
+    top: 41px;
+    left: 289px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #ffffff;
+}
+
+.frame .image {
+    width: 1174px;
+    height: 661px;
+    top: 158px;
+    left: 372px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.frame .overlap-11 {
+    position: absolute;
+    width: 430px;
+    height: 148px;
+    top: 1896px;
+    left: 745px;
+    border-radius: 25px;
+}
+
+.frame .recontres-avec-des {
+    position: absolute;
+    width: 304px;
+    height: 107px;
+    top: 23px;
+    left: 35px;
+}
+
+.frame .overlap-12 {
+    position: absolute;
+    width: 431px;
+    height: 148px;
+    top: 1724px;
+    left: 1199px;
+    border-radius: 25px;
+}
+
+.frame .rectangle-11 {
+    position: absolute;
+    width: 431px;
+    height: 148px;
+    top: 0;
+    left: 0;
+    background-color: #37275240;
+    border-radius: 25px;
+    transform: rotate(-180.00deg);
+}
+
+.frame .element-podcast {
+    position: absolute;
+    width: 129px;
+    height: 24px;
+    top: 54px;
+    left: 36px;
+}
+
+.frame .overlap-13 {
+    position: absolute;
+    width: 1920px;
+    height: 555px;
+    top: 7357px;
+    left: 0;
+    background-color: #372752;
+}
+
+.frame .text-wrapper-7 {
+    position: absolute;
+    top: 54px;
+    left: 881px;
+    font-family: "Inria Sans-Light";
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: underline;
+}
+
+.frame .text-wrapper-8 {
+    position: absolute;
+    top: 54px;
+    left: 1322px;
+    font-family: "Inria Sans-Light";
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-9 {
+    position: absolute;
+    top: 54px;
+    left: 435px;
+    font-family: "Inria Sans-Light";
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-10 {
+    position: absolute;
+    top: 497px;
+    left: 810px;
+    font-family: "Inria Sans-Regular";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .so-games-blanc-plan {
+    width: 165px;
+    height: 135px;
+    top: 116px;
+    left: 1418px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.frame .element-enjmin {
+    width: 190px;
+    height: 82px;
+    top: 153px;
+    left: 1203px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.frame .img-2 {
+    position: absolute;
+    width: 109px;
+    height: 132px;
+    top: 332px;
+    left: 896px;
+}
+
+.frame .img-3 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 45px;
+    left: 1833px;
+}
+
+.frame .facebook {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 139px;
+    left: 305px;
+}
+
+.frame .instagram {
+    position: absolute;
+    width: 76px;
+    height: 75px;
+    top: 139px;
+    left: 395px;
+}
+
+.frame .x {
+    position: absolute;
+    width: 76px;
+    height: 75px;
+    top: 139px;
+    left: 486px;
+}
+
+.frame .linked-in {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 139px;
+    left: 577px;
+}
+
+.frame .bluesky {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    top: 146px;
+    left: 667px;
+}
+
+.frame .une-demi-journe {
+    position: absolute;
+    width: 1186px;
+    height: 62px;
+    top: 2210px;
+    left: 377px;
+    color: white;
+    font-size: 32px;
+    font-family: "Inria Sans";
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.frame .element-playformances {
+    position: absolute;
+    width: 336px;
+    height: 100px;
+    top: 1920px;
+    left: 326px;
+}
+
+.frame .challenges-et-espace {
+    position: absolute;
+    width: 409px;
+    height: 95px;
+    top: 1926px;
+    left: 1236px;
+}
+
+.frame .element-tables-rondes-et {
+    position: absolute;
+    width: 313px;
+    height: 106px;
+    top: 1744px;
+    left: 780px;
+}
+
+.frame .overlap-14 {
+    position: absolute;
+    width: 1339px;
+    height: 59px;
+    top: 957px;
+    left: 291px;
+}
+
+.frame .PROPOS-7 {
+    position: absolute;
+    width: 167px;
+    height: 37px;
+    top: 0;
+    left: 585px;
+}
+
+.frame .text-wrapper-11 {
+    position: absolute;
+    width: 167px;
+    top: -1px;
+    left: 0;
+    font-family: "DINosaur-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 31px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .overlap-15 {
+    position: absolute;
+    width: 1339px;
+    height: 59px;
+    top: 3881px;
+    left: 290px;
+}
+
+.frame .PROPOS-8 {
+    position: absolute;
+    width: 257px;
+    height: 37px;
+    top: 0;
+    left: 541px;
+}
+
+.frame .PROPOS-9 {
+    position: absolute;
+    width: 257px;
+    top: -1px;
+    left: 9px;
+    font-family: "DINosaur-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 31px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .text-wrapper-12 {
+    position: absolute;
+    top: 4061px;
+    left: 292px;
+    font-family: "Inria Sans-Regular";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 19.3px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .text-wrapper-13 {
+    position: absolute;
+    width: 1334px;
+    top: 5000px;
+    left: 291px;
+    font-family: "Inria Sans-Regular";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .text-wrapper-14 {
+    position: absolute;
+    width: 1334px;
+    top: 5049px;
+    left: 291px;
+    font-family: "Inria Sans-Regular";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .text-wrapper-15 {
+    position: absolute;
+    width: 285px;
+    height: 23px;
+    top: 5936px;
+    left: 817px;
+    font-family: "Inria Sans-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .overlap-16 {
+    position: absolute;
+    width: 836px;
+    height: 266px;
+    top: 6594px;
+    left: 547px;
+}
+
+.frame .overlap-17 {
+    position: absolute;
+    width: 836px;
+    height: 252px;
+    top: 14px;
+    left: 0;
+}
+
+.frame .overlap-group-wrapper {
+    position: absolute;
+    width: 836px;
+    height: 176px;
+    top: 48px;
+    left: 0;
+}
+
+.frame .overlap-group-2 {
+    position: relative;
+    width: 828px;
+    height: 176px;
+    border-radius: 25px;
+}
+
+.frame .rectangle-12 {
+    position: absolute;
+    width: 375px;
+    height: 176px;
+    top: 0;
+    left: 453px;
+    background-color: #ffffff;
+    border-radius: 25px;
+}
+
+.frame .rectangle-13 {
+    position: absolute;
+    width: 828px;
+    height: 176px;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 25px;
+}
+
+.frame .text-wrapper-16 {
+    width: 413px;
+    left: 0;
+    position: absolute;
+    top: 15px;
+    font-family: "Inria Sans-Bold";
+    font-weight: 700;
+    color: #372752;
+    font-size: 19.3px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .vous-pouvez-vous {
+    position: absolute;
+    width: 335px;
+    top: 59px;
+    left: 58px;
+    font-family: "Inria Sans-Regular";
+    font-weight: 400;
+    color: var(--variable-collection-noir);
+    font-size: 19.3px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-17 {
+    color: #372752;
+}
+
+.frame .text-wrapper-18 {
+    color: #624592;
+}
+
+.frame .text-wrapper-19 {
+    color: #3bbde6;
+    text-decoration: underline;
+}
+
+.frame .text-wrapper-20 {
+    width: 415px;
+    left: 413px;
+    position: absolute;
+    top: 15px;
+    font-family: "Inria Sans-Bold";
+    font-weight: 700;
+    color: #372752;
+    font-size: 19.3px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .descendez-l-arr-t-de {
+    position: absolute;
+    width: 350px;
+    top: 59px;
+    left: 478px;
+    font-family: "Inria Sans-Regular";
+    font-weight: 400;
+    color: transparent;
+    font-size: 19.3px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-21 {
+    color: #000000;
+}
+
+.frame .line {
+    width: 1px;
+    height: 237px;
+    top: 15px;
+    left: 413px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.frame .SUV {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 33px;
+}
+
+.frame .shuttle-bus {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    top: 0;
+    left: 453px;
+}
+
+.frame .logo-magelis-blanc {
+    position: absolute;
+    width: 250px;
+    height: 77px;
+    top: 4781px;
+    left: 1210px;
+    object-fit: cover;
+}
+
+.frame .so-games-blanc-plan-2 {
+    width: 212px;
+    height: 174px;
+    top: 4722px;
+    left: 854px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.frame .element-enjmin-2 {
+    width: 244px;
+    height: 106px;
+    top: 4756px;
+    left: 440px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.frame .overlap-18 {
+    position: absolute;
+    width: 1339px;
+    height: 61px;
+    top: 5796px;
+    left: 290px;
+}
+
+.frame .group-2 {
+    position: absolute;
+    width: 272px;
+    height: 37px;
+    top: 0;
+    left: 534px;
+}
+
+.frame .PROPOS-10 {
+    position: relative;
+    height: 37px;
+    border-radius: 15px;
+}
+
+.frame .PROPOS-11 {
+    position: absolute;
+    width: 272px;
+    top: -1px;
+    left: 10px;
+    font-family: "DINosaur-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 31px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .rectangle-14 {
+    position: absolute;
+    width: 825px;
+    height: 411px;
+    top: 6141px;
+    left: 547px;
+    object-fit: cover;
+}
+
+.frame .rectangle-15 {
+    position: absolute;
+    width: 1351px;
+    height: 360px;
+    top: 6921px;
+    left: 290px;
+    object-fit: cover;
+}
+
+.frame .overlap-19 {
+    position: absolute;
+    width: 777px;
+    height: 748px;
+    top: 148px;
+    left: 850px;
+}
+
+.frame .rectangle-16 {
+    position: absolute;
+    width: 735px;
+    height: 626px;
+    top: 81px;
+    left: 0;
+    background-color: #573e81;
+    border-radius: 25px;
+}
+
+.frame .image-2 {
+    width: 742px;
+    height: 748px;
+    top: 0;
+    left: 35px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.frame .le-festival-du-jeu {
+    position: absolute;
+    top: 377px;
+    left: 290px;
+    text-shadow: -6px 7px 0px 4px #573e81;
+    font-family: "DINosaur-Medium";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 80px;
+    letter-spacing: 0;
+    line-height: 96px;
+}
+
+.frame .text-wrapper-22 {
+    font-weight: 500;
+}
+
+.frame .text-wrapper-23 {
+    width: 504px;
+    position: relative;
+    font-size: 80px;
+    line-height: 96px;
+    font-family: DINosaur;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: left;
+    text-shadow: -6px 7px 0px 4px #573e81;
+    font-family: DINosaur;
+}
+
+.frame .line-2 {
+    width: 830px;
+    height: 1px;
+    top: 2118px;
+    left: 545px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.frame .group-3 {
+    position: absolute;
+    width: 422px;
+    height: 69px;
+    top: 6026px;
+    left: 762px;
+}
+
+.frame .overlap-20 {
+    position: absolute;
+    width: 1339px;
+    height: 59px;
+    top: 4580px;
+    left: 290px;
+}
+
+.frame .group-4 {
+    position: absolute;
+    width: 247px;
+    height: 37px;
+    top: 0;
+    left: 546px;
+}
+
+.frame .PROPOS-12 {
+    position: absolute;
+    width: 247px;
+    top: -1px;
+    left: 9px;
+    font-family: "DINosaur-Bold";
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 31px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.frame .img-4 {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    top: 941px;
+    left: 1721px;
+}
+
+.frame .div-2 {
+    position: absolute;
+    width: 1934px;
+    height: 120px;
+    top: 0;
+    left: 0;
+}
+
+.frame .line-3 {
+    width: 1336px;
+    height: 1px;
+    top: 106px;
+    left: 301px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.frame .line-4 {
+    width: 854px;
+    height: 1px;
+    top: 115px;
+    left: 775px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.frame .overlap-21 {
+    position: relative;
+    width: 1920px;
+    height: 120px;
+}
+
+.frame .rectangle-17 {
+    position: absolute;
+    width: 1920px;
+    height: 115px;
+    top: 0;
+    left: 0;
+    background-color: #624592;
+}
+
+.frame .titre {
+    position: absolute;
+    width: 243px;
+    height: 120px;
+    top: 0;
+    left: 266px;
+    object-fit: cover;
+}
+
+.frame .text-wrapper-24 {
+    position: absolute;
+    top: 53px;
+    left: 775px;
+    font-family: "DINosaur-Book";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-25 {
+    position: absolute;
+    top: 53px;
+    left: 978px;
+    font-family: "DINosaur-Book";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-26 {
+    position: absolute;
+    top: 53px;
+    left: 866px;
+    font-family: "DINosaur-Book";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-27 {
+    position: absolute;
+    top: 53px;
+    left: 1263px;
+    font-family: "DINosaur-Book";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-28 {
+    position: absolute;
+    top: 53px;
+    left: 1387px;
+    font-family: "DINosaur-Book";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .text-wrapper-29 {
+    position: absolute;
+    top: 53px;
+    left: 1537px;
+    font-family: "DINosaur-Book";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: underline;
+}
+
+.frame .text-wrapper-30 {
+    position: absolute;
+    top: 53px;
+    left: 1096px;
+    font-family: "DINosaur-Book";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}

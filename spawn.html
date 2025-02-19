@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spawn! - Le festival du jeu vidéo d'Angoulême</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/utility.css">
+	<meta name="description" content="Le festival du jeu vidéo d'Angoulême, curation, sélections, expo indés, conférence vidéo-ludique, playformancese et spéctacles vidéo-ludique organisée par le CNAM-Enjmin et SO·Games" />
+	
+	<meta property="og:image" content="res/img/logo.png"/>
+</head>
+<script>
+    let slideIndex = 1;
+    let carInt;
+
+    function
+    nextSlide(stop=false) {
+        if (stop && carInt) clearInterval(carInt);
+        showSlide(slideIndex += 1);
+    }
+
+    function prevSlide(stop=false) {
+        if (stop && carInt) clearInterval(carInt);
+        showSlide(slideIndex -= 1);
+    }
+
+    function showSlide(n) {
+        const slides = document.querySelectorAll('.img-container-car img');
+        
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.animation = '0.3s slide-offscreen';
+            slides[i].style.display = 'none';
+            
+        }
+        if (slides[slideIndex - 1]){
+            slides[slideIndex - 1].style.display = 'block';
+            slides[slideIndex - 1].style.animation = '0.3s slide-left';
+
+        }
+    }
+
+    async function fetchImages(directory) {
+        const response = await fetch(directory);
+        const text = await response.text();
+        const parser = new DOMParser();
+        const htmlDocument = parser.parseFromString(text, "text/html");
+        const links = Array.from(htmlDocument.querySelectorAll("a")).map(a => a.getAttribute("href"));
+        links.sort();
+        const images = links.filter(link => link.match(/\.(jpeg|jfif|jpg|gif|png)$/));
+        return images.map(image => directory + "/" + image);
+    }
+
+    async function fetchGames(directory, jsonfile) {
+        const response = await fetch(directory);
+        const decode = await fetch(jsonfile);
+        const gamesFull = await decode.json();
+        const text = await response.text();
+        const parser = new DOMParser();
+        const htmlDocument = parser.parseFromString(text, "text/html");
+        const names = Array.from(htmlDocument.querySelectorAll("a")).map(a => a.text.substring(0, a.text.length-4));
+        const games = gamesFull.filter(obj => names.includes(obj.name));
+        // const links = Array.from(htmlDocument.querySelectorAll("a")).map(a => a.getAttribute("href"));
+        // links.sort();
+        // const images = links.filter(link => link.match(/\.(jpeg|jfif|jpg|gif|png)$/));
+        return games;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const imgContainer = document.getElementById("img-car");
+        const gamesContainer = document.getElementById("games");
+
+        fetchImages("res/img/slider").then(images => {
+            images.forEach(image => {
+                const imgElement = document.createElement("img");
+                imgElement.src = image;
+                imgContainer.appendChild(imgElement);
+            });
+        });
+        
+        showSlide(slideIndex);
+        
+        carInt = setInterval(() => {
+            nextSlide();
+        }, 3300);
+
+        fetchGames("res/img/games", "res/games.json").then(games => {
+            console.log(games);
+            games.forEach(game => {
+                const imgElement = document.createElement("img");
+                imgElement.src = "res/img/games" + "/" + game.name + ".jpg";
+                const rect = document.createElement('div');
+                rect.classList.add('rect');
+                const link = document.createElement('a');
+                link.href = game.link;
+                link.target = "_blank";
+                rect.appendChild(link);
+                link.appendChild(imgElement);
+                gamesContainer.appendChild(rect);
+            });
+        });
+
+    });
+
+</script>
+
+<body>
+    <div class="container">
+        <header>
+            <!-- columns should be the immediate child of a .row -->
+            <div class="row">
+                    <div class="three columns">
+                        <div class="logo">
+                            <img src="res/img/logo_spawn_logoblanc.png" alt="">
+                        </div>
+                    </div>
+                    <div class="nine columns menu-wrap">
+                        <nav class="menu">
+                            <ul>
+                                <li><a href="#a-propos">À propos</a></li>
+                                <li><a href="#inscription">Inscription</a></li>
+                                <li><a href="#programme">Programme</a></li>
+                                <li><a href="#spawn_pro">Demi-journée pro</a></li>
+                                <li><a href="#partenaires">Partenaires</a></li>
+                                <li><a href="#infos">Infos pratiques</a></li>
+                                <li><a href="index.html">Edition 2025</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+            </div>
+        </header>
+        <div class="row align-center mt-3" style="gap: 20px;">
+            <div class="one-half column">
+                <h1>Le festival<br>du jeu vidéo d'Angoulême</h1>
+            </div>
+            <div class="one-half column" style="flex: auto; flex-basis: 340px; margin: 0 auto;">
+                <div id="img-car" class="img-container img-container-car">
+                    <span class="prev" onclick="prevSlide(true)">&#10094;</span>
+                    <span class="next" onclick="nextSlide(true)">&#10095;</span>
+                </div>
+            </div>
+        </div>
+        <section id="a-propos">
+            <div class="row align-center mt-3">
+                <div class="headline-container">
+                    <h2>À propos</h2>
+                </div>
+            </div>
+            <p class="mt-2 mb-0">
+                <b><span class="blue">spawn!</span> revient pour sa deuxième édition !</b>
+                <br><br>
+                Cet événement est organisé par le <a href="https://enjmin.cnam.fr">Cnam-Enjmin</a>, la grande école publique du jeu vidéo et du numérique, <a href="https://www.sogames.org">SO· Games</a>, l'association des professionnelles et professionnels du jeu vidéo en Nouvelle-Aquitaine et le <a href="https://www.magelis.org">Pôle Image Magelis</a>, écosystème dédié au développement de la filière image en Charente.
+                <br><br>
+                spawn! c’est LE rendez-vous ludique incontournable de l’année à Angoulême.
+                <br><br><br><br>
+                <b>Quand ?</b> Samedi 6 avril 2024 de 10h à 20h
+                <br><br>
+                <b>Où ?</b> Cnam-Enjmin (bâtiment du Nil) 138 rue de Bordeaux 16000 Angoulême
+                <br><br>
+                <b>Au programme :</b>
+                <br><br>
+                <p>De 10h à 18h : </p>
+                <ul class="ml-3">
+                    <li>
+                        Plus de 50 jeux à tester : jeux indés, originaux, expériences inédites, réalité virtuelle... 
+                    </li>
+                    <li>
+                        Rencontres avec des studios indépendants de jeux vidéo
+                    </li>
+                    <li>
+                        Challenges et espace famille : <a href="https://www.smashbros.com/fr_FR/">Super Smash Bros</a>, <a href="https://mariokart8.nintendo.com/fr/">Mario Kart</a>, <a href="https://fr.bandainamcoent.eu/tekken/tekken-8">Tekken 8</a>, <a href="https://store.steampowered.com/app/1114290/Windjammers_2/">Windjammers 2</a> et <a href="https://www.ubisoft.com/fr-fr/game/just-dance/2024">Just Dance</a>
+                    </li>
+                </ul>
+                <p>De 11h à 20h10 : </p>
+                <ul class="ml-3">
+                    <li>
+                        Des tables rondes, conférence et interview sur la culture vidéoludique
+                    </li>
+                    <li>
+                        Un Podcast par Medoc et Moguri pour causer pop culture
+                    </li>
+                    <li>
+                        Une soirée expérimentale mêlant jeu vidéo et arts de la scène
+                    </li>
+                </ul>
+                <br>
+            </p>
+            <p class="mt-0">
+                Une demi-journée réservée au professionnelles et professionnels du jeu vidéo aura lieu le vendredi 5 avril 2024.
+                <br><br>
+                <i>Le concours <a href="https://all4games.eu">all4GAMES</a> n’a pas lieu cette année. Rendez-vous en 2025 !</i>
+                <br><br>
+                Événement familial, gratuit, ouvert à toutes et tous sur inscription Eventbrite dans la limite des places disponibles.
+            </p>
+            <p class="mt-4 mb-3 align-center fw-600">2e édition marrainée par <a href="https://www.linkedin.com/in/julie-le-baron-596181120/">Julie LE BARON</a>, rédactrice en chef de Canard PC</p>
+        </section>
+        <section id="inscription">
+            <div class="row align-center mt-3">
+                <div class="headline-container">
+                    <h2>Inscription</h2>
+                </div>
+            </div>
+            <div class="row align-center mt-3">
+                <a class="cta-primary w-66 my-2" href="https://www.eventbrite.com/e/billets-spawn-2-826777683307?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl">S'inscrire dès maintenant</a>
+            </div>
+        </section>
+        <section id="programme" class="my-4 pb-3">
+            <div class="row align-center mt-3">
+                <div class="headline-container">
+                    <h2>Programme</h2>
+                </div>
+            </div>
+            <p class="mt-2 mb-0 align-center">
+                <b>Jeux indépendants :</b> venez découvrir des jeux amusants, étonnants, cocasses... et rencontrez les équipes de développement !
+                <br>
+                <br>
+                <b>Sélection du festival :</b> des jeux récemment sortis, choisis avec soin et répartis en plusieurs zones :
+                <br>
+                Réalité virtuelle · Éco-responsable · Intimiste · Grand public · Horreur · Expériences interactives · Engagé · Longplay
+           
+            </p>
+            <div id="games" class="projects-grid mt-3">
+            </div>
+            <p class="mb-2 align-center mt-2">et bien plus encore...</p>
+            <hr class="mb-0">
+            <p class="mt-3 align-center">
+		<b>
+                3 tables rondes et 1 interview animées par
+		<br>
+		<a href="https://twitter.com/_DollyWood_">Dolly Wood</a>, créatrice de contenus et Camille ALEXANDRE (<a href="https://twitter.com/Quineapple">Quineapple</a>), co-rédactrice en chef et présentatrice de Jour de Play pour ARTE
+                <br><br>
+                1 conférence de <a href="https://www.linkedin.com/in/perfectwebmarketer/">Jennifer LUFAU</a>
+                <br><br>
+                1 Podcast “Le Cosy Corner” par <a href="https://twitter.com/Elmedoc">Medhi CAMPRASSE</a> et <a href="https://twitter.com/El_Mogurito">Kevin CICUREL</a>
+                <br><br>
+                3 spectacles expérimentaux autour du jeu vidéo, incluant la venue du Collectif Sous les Néons et la présentation d’une de leurs Playformances.
+		<br><br>
+		</b>
+		La programmation de 11h à 18h30 sera diffusée en live et en replay sur la <a href="https://www.youtube.com/channel/UCIivvuWawHcNcgxdAdRm87w">chaîne YouTube du Cnam-Enjmin</a> et interprétée en langue des signes française (LSF) grâce au soutien financier du <a href="https://www.sell.fr" target="_blank">SELL</a>, le Syndicat des Éditeurs de Logiciels de Loisirs.
+            </p>
+            <div class="mt-2 planning-container">
+                <div class="planning-element">
+                    <div class="time">11h00 <br>-<br> 12h00</div>
+                    <div class="title">La place du jeu vidéo au sein de la famille</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://twitter.com/diraen">Diraen</a>, cocréatrice de l'abcdpodcast, producer chez DON'T NOD, blogueuse
+                            <br><br>
+			    <a href="https://www.linkedin.com/in/sophie-krupa-6aa5883b">Sophie KRUPA "Force Rose"</a>, directrice de publication du magazine "JV" et podcasteuse - Magazine "JV - Culture Jeu Vidéo" et podcast ZQSD
+			    <br><br>
+                            <a href="https://www.linkedin.com/in/tanguy-taillandier-554a05228/">Tanguy TAILLANDIER</a>, conseiller et animateur numérique  - CSCS / MJC Rives de Charente
+                        </p>
+                    </div>
+                    <div class="note">Table ronde animée par Dolly Wood</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">12h00 <br>-<br> 13h00</div>
+                    <div class="title lavender">Être une joueuse compétitive en 2024</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://twitter.com/amelitha_jg" style="text-transform:uppercase">Amelitha</a>, joueuse compétitive - Collectif Fight Forward
+                        </p>
+                    </div>
+                    <div class="note lavender">Interview par Dolly Wood et Quineapple</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">14h00 <br>-<br> 15h00</div>
+                    <div class="title">Apprendre l'histoire à travers le jeu vidéo</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://www.linkedin.com/in/william-brou-2b116a58/">William BROU</a>, enseignant d'histoire-géo et créateur de contenus - <a href="https://histoireenjeux.fr">Histoire en jeux</a>
+							<br>
+							<a href="https://www.linkedin.com/in/thomas-rockenstrocly-b7079785/">Thomas ROCKENSTROCLY</a>, consultant en contenu - Ubisoft
+                            <br>
+                            <a href="https://www.linkedin.com/in/laëtitia-vétéran-marie-catherine-9bb54328a/">Laëtitia VETERAN-MARIE-CATHERINE</a>, animatrice, conférencière histoire et histoire de l'art, ambassadrice Jeune OFAJ
+                        </p>
+                    </div>
+                    <div class="note">Table ronde animée par Quineapple</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">15h00 <br>-<br> 16h00</div>
+                    <div class="title">Démontage de scènes sexistes du jeu vidéo</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://www.linkedin.com/in/perfectwebmarketer/">Jennifer LUFAU</a>, consultante marketing pour les créateurs indépendants, fondatrice de l’association Afrogameuses
+                        </p>
+                    </div>
+                    <div class="note">Conférence</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">16h00 <br>-<br> 17h00</div>
+                    <div class="title">Le jeu d'horreur peut-il se renouveler ?</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://www.linkedin.com/in/julie-le-baron-596181120/">Julie LE BARON</a>, rédactrice en chef Canard PC
+                            <br><br>
+                            <a href="https://twitter.com/_DollyWood_">Dolly Wood</a>, créatrice de contenus
+                            <br><br>
+                            <a href="https://www.linkedin.com/in/cyril-carincotte-b7117a60/">Cyril CARINCOTTE</a>, cinematic tech programmer
+                        </p>
+                    </div>
+                    <div class="note">Table ronde animée par Quineapple</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">17h00 <br>-<br> 18h30</div>
+                    <div class="title purple"><a href="https://soundcloud.com/lecosycorner">Le Cosy Corner</a></div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://twitter.com/Elmedoc">Medhi CAMPRASSE</a>, streamer et podcaster
+                            <br><br>
+                            <a href="https://twitter.com/El_Mogurito">Kevin CICUREL</a>, streamer et podcaster
+                        </p>
+                    </div>
+                    <div class="note purple">Podcast</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">18h40 <br>-<br> 20h10</div>
+                    <div class="title">Soirée expérimentale autour du jeu vidéo</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            Playformance de Hugo <span style="text-transform: uppercase;">Sastres Fournès</span> (Collectif Sous les Néons) qui parlera de Néo-colonialisme sur le jeu Ghost Recon : Wildlands.
+                            <br><br>
+                            Scène ouverte de Peggy <span style="text-transform: uppercase;">Lecouvay</span> : "Rock Band, ou comment un jeu auquel j'ai joué une fois m'a sauvée du burnout"
+                            <br><br>
+                            Concert live avec lecture sur le jeu <a href="https://ichbinrob.itch.io/sur-tout-le-trajet" target="_blank">Sur tout le Trajet </a> par <a href="https://loyaltyfreakmusic.com/about/" target="_blank">Rrrrrose Azerty</a>, Guenille et Rob à Fleurs🌸
+                        </p>
+                    </div>
+                    <div class="note">Soirée expérimentale</div>
+                </div>
+                <!-- <div class="planning-element">
+                    <div class="time">17h00 <br>-<br> 18h30</div>
+                    <div class="title purple"><a href="https://soundcloud.com/lecosycorner">Le Cosy Corner</a></div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://twitter.com/Elmedoc">Médoc</a>, acteur, réalisateur, producteur et scénariste
+                            <br><br>
+                            <a href="https://twitter.com/El_Mogurito">Moguri</a>, acteur, réalisateur, producteur et scénariste
+                        </p>
+                    </div>
+                    <div class="note purple">Podcast</div>
+                </div> -->
+            </div>
+        </section>
+        <section id="spawn_pro" class="mt-3">
+            <div class="row align-center mt-3">
+                <div class="headline-container">
+                    <h2>Demi-journée réservée aux pros</h2>
+                </div>
+            </div>
+            <p class="mt-4 mb-0">
+                <span class="blue">spawn!</span> pro est un cycle de conférences et de rencontres entre professionnelles et professionnels de l’industrie qui aura lieu le vendredi 5 avril 2024 à partir de 15h.
+                <br><br>
+                Le but de cette manifestation est de diffuser les bonnes pratiques indies qui permettent de se professionnaliser.
+                <br><br>
+                Au programme :
+            </p>
+            <ul class="mt-1 ml-3">
+                <li>
+                    Cycle de conférences de 15h à 19h
+                </li>
+                <li>
+                    Afterwork SO· Games dès 19h
+                </li>
+            </ul>
+            <br>
+            <div class="row align-center mt-3">
+                <p>
+                    <b>Programme des conférences</b>
+                </p>
+            </div>
+            <div class="mt-2 pb-3 planning-container planning-alt">
+               <div class="planning-element">                                                                                              
+				   <div class="time">15h00 <br>-<br> 15h30</div>
+                    <div class="title">Introduction</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">Discours des organisateurs et des partenaires
+                        </p>
+		    </div>
+			<div class="note">Prises de parole</div> 
+                </div>
+                <div class="planning-element">
+                    <div class="time">15h30 <br>-<br> 16h10</div>
+                    <div class="title">Jyros, l'outil de mesure d'impact environnemental dédié au secteur du jeu vidéo.</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                         <a href="https://www.linkedin.com/in/sébastien-fontaine-231a66a0/">Sébastien FONTAINE</a>, expert écologie, multimédia et bâtiments - Mètis conseil / BoCAJ<br>
+			 <a href="https://www.linkedin.com/in/piforest">Pierre Forest</a>, Président de Games Planet / Metaboli, expert Sobriété Numérique, VP Sobriété numérique SO·Games.
+                        </p>
+                    </div>
+                    <div class="note">Formation</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">16h15 <br>-<br> 16h55</div>
+                    <div class="title">Péripéties du dev d'un jeu d'aventure : <br>le cas de Baladins</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://www.linkedin.com/in/jeanico/">Jean NICOLAS</a>, admin &amp; marketing - Seed by Seed
+                            <br>
+                            <a href="https://www.linkedin.com/in/thaïs-arias-6967b676/">Thaïs ARIAS</a>, game designer - Seed by Seed
+                        </p>
+                    </div>
+                    <div class="note">Conférence</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">17h00 <br>-<br> 17h40</div>
+                    <div class="title">L'écriture &amp;&nbsp; le narrative design d'Astral Ascent</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://www.linkedin.com/in/cindy-asselin-de-beauville-87688a99/">Cindy ASSELIN DE BEAUVILLE surnommé Hoshi</a>, writer &amp; narrative designer -  Freelance - Actezéro
+                        </p>
+                    </div>
+                    <div class="note">Conférence</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">17h45 <br>-<br> 18h25</div>
+                    <div class="title">Auto édition : tirer les enseignements de la création d'une ligne d'édition</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://www.linkedin.com/in/davidelahee/">David "Blackmagic" ELAHEE</a>, président, développeur et éditeur - Headbang Club
+                        </p>
+                    </div>
+                    <div class="note">Conférence</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">18h30 <br>-<br> 18h50</div>
+                    <div class="title">Modalités de financement</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://www.linkedin.com/in/frédéric-baillard/">Frédéric BAILLARD</a>, responsable filière image &amp; son - Crédit Agricole Charente-Périgord
+                        </p>
+                    </div>
+                    <div class="note">Conférence</div>
+                </div>
+                <div class="planning-element">
+                    <div class="time">18h50 <br>-<br> 19h00</div>
+                    <div class="title">Mots de fin</div>
+                    <div class="description black">
+                        <p class="align-left mb-0">
+                            <a href="https://www.linkedin.com/in/mynesta/">Marie-Charlotte YNESTA</a>, déléguée générale - SO· Games
+                        </p>
+                    </div>
+                    <div class="note"></div>
+                </div>
+            </div>
+        </section>
+        <section id="organisateurs">
+            <div class="row align-center mt-4">
+                <div class="headline-container">
+                    <h2>Organisateur·ices</h2>
+                </div>
+            </div>
+            <div class="row align-center mt-3 orga_logo">
+                <div class="four columns">
+                    <a href="https://enjmin.cnam.fr">
+                        <img src="res/img/2015-10-14 Enjmin CMJN blanc.png" width="220" alt="Logo CNAM ENJMIN">
+                    </a>
+                </div>
+                <div class="four columns">
+                    <a href="https://www.sogames.org">
+                        <img src="res/img/sogames.png" width="220" alt="Logo SOGAMES">
+                    </a>
+                </div>
+                <div class="four columns">
+                    <a href="https://www.magelis.org">
+                        <img src="res/img/Logos partenaires/Logo Magelis blanc.png" width="220" alt="Logo Magelis">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="partenaires" class="partenaires">
+            <div class="row align-center mt-3">
+                <div class="headline-container">
+                    <h2>Partenaires</h2>
+                </div>
+            </div>
+            <p class="mt-3 align-center">
+                Merci à tous nos partenaires de leur confiance
+            </p>
+			
+            <div class="row align-center mt-3">
+                <div class="twelve columns">
+                    <a href="https://www.credit-agricole.fr/ca-charente-perigord/professionnel.html">
+                        <img src="res/img/spawn2024IMG/ca-charente.png" width="230" alt="Logo CA Charente">
+                    </a>
+                </div>
+            </div>
+            <div class="row align-center partenaires_logo">
+                <div class="twoo columns mt-4">
+                    <a href="https://www.arte.tv/fr/">
+                        <img src="res/img/spawn2024IMG/arte.png" width="130" alt="Logo Arte">
+                    </a>
+                </div>
+                <div class="twoo columns mt-4">
+                    <a href="https://www.sell.fr">
+                        <img src="res/img/spawn2024IMG/sell.png" width="150" alt="Logo SELL">
+                    </a>
+                </div>
+                <div class="twoo columns mt-4">
+                    <a href="https://womeningamesfrance.org">
+                        <img src="res/img/spawn2024IMG/wig.png" width="100" alt="Logo WiG">
+                    </a>
+                </div>
+				<div class="twoo columns mt-4">
+                    <a href="https://www.capgame.fr/">
+                        <img src="./res/img/Logos partenaires/fullwhite.png" width="180"   alt="Logo Cap Game">
+                    </a>
+                </div>
+                <div class="twoo columns mt-4">
+                    <a href="https://www.nouvelle-aquitaine.fr">
+                        <img src="res/img/spawn2024IMG/naq.png" width="130" alt="Logo Nouvelle-Aquitaine">
+                    </a>
+                </div>
+                <div class="twoo columns mt-4">
+                    <a href="https://www.absolument-angouleme.fr">
+                        <img src="res/img/absng.png" width="100" alt="Logo Absolument Angoulême">
+                    </a>
+                </div>
+                <div class="twoo columns mt-4">
+                    <a href="https://www.grandangouleme.fr">
+                        <img src="./res/img/Logos partenaires/logo_grand_angouleme_blanc.svg" width="100" alt="Logo Grand Angoulême">
+                    </a>
+                </div>
+				<div class="twoo columns mt-4">
+                    <a href="https://fr.unesco.org/creative-cities/angouleme">
+                        <img style="width:250px" src="./res/img/Logos%20partenaires/LOGO_UNESCO_partenairesBLANCpdf.png" alt="Angouleme, ville creative unesco"/>
+                    </a>
+                </div>
+            </div>
+            
+			<div class="row align-center mt-4 mb-2">
+                    <a href="https://www.angouleme.fr/annuaire/gamers-generation/" class="mr-1">Gamers Generation</a>
+                    <span class="mr-1">·</span>
+                    <a href="https://www.angouleme.fr/annuaire/association-angoumoisine-de-jeux-et-dhistoire-aajh/" class="mr-1">Association Angoumoisine de Jeux et d’Histoire</a>
+                    <span class="mr-1">·</span>
+                    <a href="https://legroscorbeau.com" class="mr-1">Le Gros Corbeau</a>
+                    <span class="mr-1">·</span>
+                    <a href="https://www.grandangouleme.fr/sortir-et-decouvrir/culture/lalpha-mediatheque/" class="mr-1">L’Alpha</a>
+                    <span class="mr-1">·</span>
+                    <a href="https://www.cscs-rivesdecharente.com" class="mr-1">MJC Rives2Charente</a>
+                    <span class="mr-1">·</span>
+                    <a href="https://www.caj-grand-font.fr" class="mr-1">CSCS CAJ Grand Font</a>
+                    <span class="mr-1">·</span>
+                    <a href="https://cscsflep.com" class="">CSCS FLEP de Soyaux</a>
+					<span class="mr-1">·</span>
+					<a href="https://stga.fr" class="">STGA</a>
+            </div>
+            
+			<p class="align-center">
+                Comité éthique : merci aux membres du <a href="https://www.stjv.fr">STJV</a>, <a href="https://solidairesinformatique.org">Solidaires Informatique</a> et <a href="https://twitter.com/CollectifMH">Mauvaises Herbes</a>
+            </p>
+        </section>
+        <section id="infos" class="pt-3">
+            <div class="row align-center mt-3">
+                <div class="headline-container">
+                    <h2>Infos pratiques</h2>
+                </div>
+            </div>
+            <h3 class="mt-3 align-center">
+                    Contacts
+            </h3>
+            <div class="row align-center mt-3 stretch pb-3">
+                <div class="align-center one-half column white black pa-3">
+                    <div class="flex-center v-center">
+                        <p class="blue"><b>Journée grand public</b></p>
+                        <p>
+                            <b>Coordination générale &amp; Partenariats</b>
+                            <br>Indira VALDIVIA-VIZARRETA : <a href="mailto:indira.valdivia@lecnam.net">indira.valdivia@lecnam.net</a>
+                        </p>
+                        <p class="mt-2 mb-0">
+                            <b>Communication &amp; Presse</b>
+                            <br>Stéphanie BOCQUILLON BREL : <a href="mailto:stephanie.bocquillon-brel@lecnam.net">stephanie.bocquillon-brel@lecnam.net</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="align-center one-half column white black pa-3">
+                    <div class="flex-center">
+                        <p class="blue"><b>Demi-journée pro</b></p>
+                        <p>
+                            <b>Coordination générale</b>
+                            <br>David ELAHEE : <a href="mailto:david.elahee@sogames.org">david.elahee@sogames.org</a>
+                            <br>Marie-Charlotte YNESTA : <a href="mailto:marie-charlotte@sogames.org">marie-charlotte@sogames.org</a>
+                        </p>
+                        <p class="mt-2 mb-0">
+                            <b>Communication</b>
+                            <br>Capucine CHAUFFOURIER : <a href="mailto:capucine@sogames.org">capucine@sogames.org</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h3 class="mt-3 align-center">
+                    Équipes
+            </h3>
+            <div class="row align-center mt-3 stretch pb-3">
+                <div class="align-center one-half column white black pa-3">
+                    <div class="flex-center v-center">
+                        <p class="blue"><b>Cnam-Enjmin</b></p>
+                        <p>
+                            <b>Stéphanie BOCQUILLON BREL</b>, responsable communication
+			    <br><br>
+			    <b>Axel BUENDIA</b>, directeur
+			    <br><br>
+			    <b>May HUBERT</b>, assistante de formation et chargée d’événementiel
+                            <br><br>
+		            <b>Loïs LESPES</b>, développeur
+                            <br><br>
+			    <b>Christophe MAQUET</b>, technicien support
+                            <br><br>
+			    <b>Linda MIKHAIL</b>, chargée de communication
+                            <br><br>
+			    <b>Indira VALDIVIA-VIZARRETA</b>, responsable des partenariats et des relations internationales
+			    <br><br>
+			    <b>Margaux VIRIEU</b>, secrétaire générale
+                        </p>
+                    </div>
+                </div>
+                <div class="align-center one-half column white black pa-3">
+                    <div class="flex-center">
+                        <p class="blue"><b>SO· Games</b></p>
+			<p>
+			   <b>Capucine CHAUFFOURIER</b>, chargée de communication
+			   <br><br>
+			   <b>Camille COQ</b>, curatrice de la sélection
+			   <br><br>
+			   <b>David ELAHEE</b>, président, web designer, curation, programmation, suivi, cofondateur du FJA
+                           <br><br>
+			   <b>Sébastien FONTAINE</b>, logistique, cofondateur du FJA
+                           <br><br>
+			   <b>Robinson LACOTTE</b>, curateur des expériences
+			   <br><br>
+			   <b>Mylène LOURDEL</b>, vice-présidente événement, programmation, curation des conférences grand public
+                           <br><br>
+			   <b>Marie-Charlotte YNESTA</b>, déléguée générale
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+<div class="row align-center stretch pb-3">
+                
+                <div class="align-center twelve column white black pa-3">
+                    <div class="flex-center">
+                        <p class="blue"><b>Nos super guests et membres de comités !</b></p>
+			<div class="row" style="flex-flow: row;gap: 20px;align-items: flex-start;">
+<p style="
+    flex: 1;
+    text-align: left;
+">
+    <b>Adrien LAROUZÉE</b>, responsable du pilotage des projets numériques - ARTE
+			   <br><br>
+			   <b>Céline HIRTZ-GARDRÉ</b>, chargée de projets numériques - Médiathèque L'Alpha<br><br>
+			   <b>Tanguy TAILLANDIER</b>, conseiller et animateur numérique&nbsp; - CSCS / MJC Rives de Charente
+			   
+			   
+			   
+			   </p>
+			<p style="
+    flex: 1;
+    text-align: left;
+">
+    
+			   
+			   
+			   <b>Dolly Wood</b>, créatrice de contenus<br><br>
+			   <b>Quineapple</b>, co-rédactrice en chef et présentatrice de Jour de Play - ARTE<br><br>
+			   <b>David BEAUVALLET</b>, directeur marketing et communication - Magelis
+
+			   </p></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mt-3 align-center">
+                    Préparer votre venue
+            </h3>
+            <p class="align-center">
+                <b>
+                    Adresse:
+                </b>
+                <br>
+                Cnam-Enjmin (bâtiment du Nil)
+                <br>
+                138 rue de Bordeaux 16000 Angoulême 
+            </p>
+            <div class="align-center row mt-3">
+                <div class="align-center eight columns">
+                    <div class="img-container">
+                        <!-- <img src="res/img/map.png" alt="Google Maps Location"> -->
+                        <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=138%20Rue%20de%20Bordeaux,%2016000%20Angoul%C3%AAme+(CNAM%20Enjmin)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps trackers</a></iframe></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-center mt-4 stretch pb-3">
+                <div class="four columns white black pa-1">
+                    <div class="flex-center v-center">
+                        <p class="blue"><b>En voiture</b></p>
+                        <p>
+                            Vous pouvez vous garer sur 
+                            le parking gratuit du Musée de la BD 
+                            et emprunter ensuite la passerelle 
+                            (<a href="https://enjmin.cnam.fr/medias/fichier/plancampus-enjmin_1500992127194-pdf">téléchargez le plan d'accès</a>)
+                        </p>
+                    </div>
+                </div>
+                <div class="four columns white black pa-1">
+                    <div class="flex-center">
+                        <p class="blue"><b>En Bus</b></p>
+                        <p>
+                            Descendez à l'arrêt de bus "Le Nil" desservi par les lignes 5 et 3 
+                            ou "La Cité" desservi par les lignes 6 et 9 
+                            (<a href="https://www.stga.fr">plus d'informations</a>)
+                        </p>
+                    </div>
+                </div>
+                <div class="eight columns align-center img-container mt-4">
+                    <img src="res/img/spawn2024IMG/bat.jpg" alt="Bâtiment Le Nil" srcset="">
+                </div>
+            </div>
+        </section>
+        <section id="reseaux" class="mb-4">
+            <div class="row align-center dark py-2">
+                <div class="row align-center w-100">
+                    <p class="align-center">Suivez-nous sur les réseaux sociaux pour avoir toutes les informations en temps réel !</p>
+                </div>
+                <div class="row align-center g-5">
+                    <div class="social">
+                        <a href="https://facebook.com/spawnfestival">
+                            <img src="res/img/spawn2024IMG/facebook.png" alt="Facebook" srcset="">
+                        </a>
+                    </div>
+                    <div class="social">
+                        <a href="https://instagram.com/spawnfestival">
+                            <img src="res/img/spawn2024IMG/instagram.png" alt="Instagram" srcset="">
+                        </a>
+                    </div>
+                    <div class="social">
+                        <a href="https://twitter.com/spawnfestival">
+                            <img src="res/img/spawn2024IMG/x.png" alt="X (Twitter)" srcset="">
+                        </a>
+                    </div>
+                    <div class="social">
+                        <a href="https://www.linkedin.com/company/spawnfestival">
+                            <img src="res/img/spawn2024IMG/linkedin.png" alt="LinkedIn" srcset="">
+                        </a>
+                    </div>
+                </div>
+				<br/><br/><br/>
+				
+            </div>
+			
+        </section>
+		<section>
+			<div class="dark" style="padding:20px;">
+					<h2>Mentions légales</h2>
+					<h4>Editeurs</h4>
+					<h5>Cnam-Enjmin</h5>
+					<p>
+					Siret : 197 534 712 00017 - Forme juridique :    Établissement public national à caractère scientifique culturel et professionnel - Code activité : Enseignement supérieur (85.42Z) - TVA intracommunautaire : FR11197534712 - Adresse : 138 rue de Bordeaux 16000 Angoulême <br/> Directeur : Axel BUENDIA
+					</p>
+					<h5>SO· Games</h5>
+					<p>
+					Siret : 50539681200024 – Forme juridique : Association loi 1901 – Code activité : Autres organisations fonctionnant par adhésion volontaire (9499Z) <br/> TVA intracommunautaire : FR35505396812 – Adresse : 12 place de la Bourse 33000 Bordeaux <br/> Président : David ELAHEE
+					</p>
+					Hébergement : Cnam-Enjmin
+					Tous droits réservés 2017-2024 – Cnam-Enjmin et SO· Games
+				</div>
+		</section>
+    </div>
+</body>
+</html>
