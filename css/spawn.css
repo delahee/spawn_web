@@ -41,7 +41,7 @@ hr {
 
 @media (max-width: 768px) { 
         h2, p, span, h1 {
-            font-size: small!important;
+            font-size: 11px !important;
             }
         }
 
@@ -160,7 +160,7 @@ h1 .logo {
     }
 
 }
-@media (max-width: 320px) {
+@media (max-width: 400px) {
     #banner .content{
         width: 50%;
     }
@@ -624,7 +624,7 @@ h1 .logo {
             margin-bottom :5%;
         }
 
-@media (max-width: 320px) { 
+@media (max-width: 400px) { 
     #propos .infos .rectangle7{
         width: 17%;
         margin-right: 15%;
@@ -1193,7 +1193,7 @@ h1 .logo {
             width: 50%;
         }
 
-        @media(max-width: 320px){
+        @media(max-width: 400px){
             #infos .map{
                 margin-left: 12.5%;
                 width: 75%;
@@ -1233,7 +1233,7 @@ h1 .logo {
             height: 62px;
         }
 
-        @media(max-width: 320px){
+        @media(max-width: 400px){
             #infos .image{
                 margin-right: 17.5%;
             }
