@@ -309,6 +309,13 @@ ul#nav li.current a { color: #F06000; }
    }
 }
 
+@media only screen and (min-width: 1980px) {
+   #nav-wrap{
+      font-size: 25px;
+      font-family: 'DINosaur';
+   }
+}
+
    /* Header Styles
    -------------------------------------------------------------------- */
    header .banner {

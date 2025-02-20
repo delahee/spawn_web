@@ -27,6 +27,11 @@ p {
     font-weight: 400;
     word-wrap: break-word
 }
+@media (min-width: 2560px){
+    p {
+        font-size: 30px;
+    }
+}
 
 body{
     background: #624592;
@@ -160,9 +165,10 @@ h1 .logo {
     }
 
 }
-@media (max-width: 400px) {
+@media (max-width: 300px) {
     #banner .content{
-        width: 50%;
+        width: 53% !important;
+        margin-right: 25% !important;
     }
 }
 
@@ -175,6 +181,7 @@ h1 .logo {
         width: 55%;
         display: flex;
         margin-top: 20%;
+        margin-right: 10%;
     }
 }
 
@@ -218,8 +225,11 @@ h1 .logo {
 
 @media (min-width: 2560px) {
     #banner .content{
-        width: 25%;
-        line-height: 196px;
+        width: 41%;
+        font-size: 2em;
+    }
+    #banner .content .text-wrapper{
+       line-height: 190px;
     }
 }
 
@@ -395,6 +405,21 @@ h1 .logo {
             align-items: center;
         }
 
+        @media (min-width : 2560px){
+            #propos .row .rectangle4 .text-wrapper-2{
+                font-size: 40px;
+            }
+            #propos .row .rectangle4 .text-wrapper-box{
+                font-size: 40px;
+            }
+            #propos .row .rectangle2 .text-wrapper-box{
+                font-size: 40px;
+            }
+            #propos .row .rectangle2 .text-wrapper-2{
+                font-size: 40px;
+            }
+        }
+
         #propos .row .rectangle3{
             position: absolute;
             width: 30%;
@@ -557,8 +582,8 @@ h1 .logo {
         }
 
         #propos .infos .rectangle10{
-            width: 20%;
-            margin-right: 14%;
+            width: 24%;
+            margin-right: 12%;
             /*background-color: #37275240;*/
             border-radius: 25px;
             display: flex;
@@ -698,6 +723,15 @@ h1 .logo {
         font-size: 48px!important;
     }
 }
+
+    @media (min-width: 2560px){
+        #propos .infos .upper{
+            font-size: 40px !important;
+        }
+        #propos .infos .text-wrapper-2{
+            font-size: 40px !important;
+        }
+    }
 
     #billetterie {
         background-color: #755C9F;
