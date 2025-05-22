@@ -70,6 +70,22 @@ li{
     margin-bottom: 1rem;
 }
 
+b {
+    font-family: "DINosaur";
+    font-weight: 500;
+    font-size: 28px;
+}
+
+i {
+    font-style: italic;
+}
+
+select {
+    font-size: 0.9rem;
+    font-family: 'DINosaur';
+    padding: 3px 30px;
+}
+
 .ml-3 {
     margin-left: 3rem;
     list-style: circle inside;
@@ -103,8 +119,8 @@ li{
 }
 
 @media (max-width: 768px) { 
-        h2, p, span, h1 {
-            font-size: 11px !important;
+        h2, p, span, h1, b {
+            font-size: 15px !important;
             }
         }
 
@@ -142,7 +158,6 @@ h1 .logo {
     #banner {
         background-color: #624592;
         display: flex;
-        margin-bottom: 6%;
         flex-direction: row;
         align-content: center;
         justify-content: center;
@@ -234,6 +249,7 @@ h1 .logo {
     #banner .content .text-wrapper {
             font-size: 75% !important;
             line-height: 40px;
+            margin-top: 2em;
         }
     #banner .content{
         width: 55%;
@@ -302,7 +318,7 @@ h1 .logo {
         justify-content: center;
         /* align-items: flex-start; */
         flex-wrap: nowrap;
-        /*margin-top: -5%;*/
+        padding-top: 7em;
     }
 
         #propos .header h2{
@@ -393,12 +409,12 @@ h1 .logo {
         #propos .row .rectangle2 .text-wrapper-box{
             color: white;
             font-size: 24px;
+            width: 43%;
+            margin-left: 30%;
             font-family: "DINosaur";
             font-weight: 700;
-            /* position: absolute; */
             display: flex;
             margin-top: 15%;
-            /* margin-left: 31%; */
             text-align: center;
             flex-direction: row;
             flex-wrap: wrap;
@@ -798,6 +814,7 @@ h1 .logo {
         align-content: center;
         justify-content: center;
         flex-wrap: nowrap;
+        padding-top: 3.4em;
     }
 
         #billetterie .header h2{
@@ -909,7 +926,7 @@ h1 .logo {
     #programme {
         display: flex;
         flex-direction: column;
-        margin-top: 2%;
+        padding-top: 3.4em;
         align-content: center;
         justify-content: center;
         flex-wrap: nowrap;
@@ -1045,6 +1062,7 @@ h1 .logo {
         align-content: center;
         justify-content: center;
         flex-wrap: nowrap;
+        padding-top: 3.4em;
     }
 
         #demi-journee .header h2{
@@ -1098,6 +1116,7 @@ h1 .logo {
         justify-content: center;
         flex-wrap: nowrap;
         background-color: #755C9F;
+        padding-top: 3.4em;
     }
 
         #organisateurs .header h2{
@@ -1339,6 +1358,7 @@ h1 .logo {
             justify-content: center;
             align-items: center;
             font-size: 1.1em;
+            font-family: "DINosaur";
         }
 
         #partenaires .content .text-wrapper{
@@ -1370,6 +1390,7 @@ h1 .logo {
         justify-content: center;
         flex-wrap: nowrap;
         background-color: #755C9F;
+        padding-top: 3.4em;
     }
 
         #infos .header h2{
@@ -1656,7 +1677,7 @@ h1 .logo {
         position: relative;
         bottom: -22px;
         left: 50%;
-        margin-left: 0px;
+        margin-left: 1.5em;
         width: fit-content;
     }
 

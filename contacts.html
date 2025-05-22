@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="./css/headermention.css" />
     <link rel="icon" href="favicon.ico" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <meta name="description" content="Page de contact du site Spawn! organisée par le CNAM-Enjmin et SO·Games" />
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B0CZKVNFRS"></script>
@@ -40,14 +41,18 @@
                         </div>
                      <ul id="nav" class="nav">
                         
-                        <li><a class="smoothscroll" href="index.html#propos">À PROPOS</a></li>
-                       <li><a class="smoothscroll" href="index.html#billetterie">BILLETTERIE</a></li>
-                       <li><a class="smoothscroll" href="index.html#programme">PROGRAMME</a></li>
-                       <li><a class="smoothscroll" href="index.html#demi-journee">DEMI-JOURNÉE PRO</a></li>
-                       <li><a class="smoothscroll" href="index.html#organisateurs">PARTENAIRES</a></li>
-                       <li><a class="smoothscroll" href="index.html#infos">INFOS PRATIQUES</a></li>
-                       <li><a class="smoothscroll" href="https://spawngamesfestival.org/">ÉDITION 2024</a></li>
+                        <li><a class="smoothscroll" href="index.html#propos" data-key="apropos" data-change>À PROPOS</a></li>
+                       <li><a class="smoothscroll" href="index.html#billetterie" data-key="billeterie" data-change>BILLETTERIE</a></li>
+                       <li><a class="smoothscroll" href="index.html#programme" data-key="programme" data-change>PROGRAMME</a></li>
+                       <li><a class="smoothscroll" href="index.html#demi-journee" data-key="demijournée" data-change>DEMI-JOURNÉE PRO</a></li>
+                       <li><a class="smoothscroll" href="index.html#organisateurs" data-key="partenaires" data-change>PARTENAIRES</a></li>
+                       <li><a class="smoothscroll" href="index.html#infos" data-key="infospratiques" data-change>INFOS PRATIQUES</a></li>
+                       <li><a class="smoothscroll" href="spawn.html" data-key="edition2024" data-change>ÉDITION 2024</a></li>
                      </ul> <!-- end #nav -->
+                     <select id="modifyLang">
+                        <option value="fr"  data-key="fr" data-change>Français</option>
+                        <option value="en"  data-key="en" data-change>Anglais</option>
+                    </select>
                   </nav> <!-- end #nav-wrap -->
             </header> <!-- Header End -->
         </div>
@@ -57,10 +62,10 @@
                 <div class="contact-container">
                     <div class="contact-section">
                         <div class="colored-box">
-                            <p class="section-title">Journée grand public</p>
+                            <p class="section-title" data-key="jgp" data-change>Journée grand public</p>
                         </div>
                         <div class="rectangle">
-                            <p class="p">
+                            <p class="p" data-key="com" data-change>
                                 <span class="text-wrapper">Coordination générale, communication &amp; presse<br /></span>
                                 <span class="smallerText">Stéphanie BOCQUILLON BREL : stephanie.bocquillon-brel@lecnam.net<br /></span>
                                 <span class="text-wrapper"><br />Partenariats<br /></span>
@@ -71,10 +76,10 @@
 
                     <div class="contact-section">
                         <div class="colored-box">
-                            <p class="section-title">Demi-journée Pro</p>
+                            <p class="section-title" data-key="djp" data-change>Demi-journée Pro</p>
                         </div>
                         <div class="rectangle">
-                            <p class="coordination-g-n">
+                            <p class="coordination-g-n" data-key="coordination" data-change>
                                 <span class="text-wrapper">Coordination générale<br /></span>
                                 <span class="smallerText">David ELAHEE : david.elahee@gmail.com<br />Marie-Charlotte YNESTA : marie-charlotte@sogames.org<br /><br /></span>
                                 <span class="text-wrapper">Communication<br /></span>
@@ -85,14 +90,14 @@
                 </div>
             </div>
             <div class="EquipeElement">
-                <h2 class="text-wrapper-3">ÉQUIPES</h2>
+                <h2 class="text-wrapper-3" data-key="teams" data-change>ÉQUIPES</h2>
                 <div class="contact-container">
                     <div class="contact-section">
                         <div class="colored-box">
                             <p class="section-title">Cnam-Enjmin</p>
                         </div>
                         <div class="rectangle">
-                            <p class="p">
+                            <p class="p" data-key="enjminteam" data-change>
                                 <span class="text-wrapper">Stéphanie BOCQUILLON BREL,</span>
                                 <span class="smallerText"> responsable communication<br /><br /></span>
                                 <span class="text-wrapper">Axel BUENDIA,</span>
@@ -120,7 +125,7 @@
                             <p class="section-title">SO· Games</p>
                         </div>
                         <div class="rectangle">
-                            <p class="coordination-g-n">
+                            <p class="coordination-g-n" data-key="sogamesteam" data-change>
                                 <span class="text-wrapper">Capucine CHAUFFOURIER,</span>
                                 <span class="smallerText"> chargée de communication<br /><br /></span>
                                 <span class="text-wrapper">Camille COQ,</span>
@@ -146,12 +151,12 @@
             </div>
             <div class="Infosupp">
                 <div class="colored-box">
-                    <p class="section-titleinfo">Nos super guests et membres de comités !</p>
+                    <p class="section-titleinfo" data-key="guests" data-change>Nos super guests et membres de comités !</p>
                 </div>
                 <div class="contact-containerInfo">
                     <div class="contact-section">
                         <div class="rectangle">
-                            <p class="coordination-g-n">
+                            <p class="coordination-g-n" data-key="membres" data-change>
                                 <span class="text-wrapper">Adrien LAROUZÉE,</span>
                                 <span class="smallerText"> responsable du pilotage des projets numériques - ARTE <br /></span>
                                 <span class="text-wrapper"><br />⁠Céline HIRTZ-GARDRÉ,</span>
@@ -163,7 +168,7 @@
                     </div>
                     <div class="contact-section">
                         <div class="rectangle">
-                            <p class="p">
+                            <p class="p" data-key="membres2" data-change>
                                 <span class="text-wrapper">Dolly Wood,</span>
                                 <span class="smallerText"> créatrice de contenus<br /></span>
                                 <span class="text-wrapper"><br />Quineapple,</span>
@@ -186,7 +191,7 @@
             <div class="upper-container">
                 <div class="footerElement-section">
                     <div class="colored-box">
-                        <p class="info-title">Réseaux sociaux</p>
+                        <p class="info-title" data-key="reseauxsociaux" data-change>Réseaux sociaux</p>
                     </div>
                     <div class="reseaux">
                         <a href="https://facebook.com/spawnfestival">
@@ -209,7 +214,7 @@
 
                 <div class="footerElement-section">
                     <div class="colored-box">
-                        <p class="info-title"><a class="redirectToPage" href="./contacts.html">Contact et équipe</a></p>
+                        <p class="info-title" data-key="contact" data-change><a class="redirectToPage" href="./contacts.html">Contact et équipe</a></p>
                     </div>
                     <div class="">
 
@@ -217,7 +222,7 @@
                 </div>
                 <div class="footerElement-section">
                     <div class="colored-box">
-                        <p class="info-title">Organisateurs</p>
+                        <p class="info-title" data-key="organisateursmin" data-change>Organisateurs</p>
                     </div>
                     <div class="Organisateurs">
                         <a href="https://enjmin.cnam.fr/">
@@ -237,12 +242,13 @@
                         <img class="img" alt="Spawn Icon" src="./res/img/Spawnicon.png" />
                     </div>
                     <div class="">
-                        <p class="info-title">© Cnam-Enjmin | <a class="redirectToPage" href="./mentions.html">Mentions légales</a> | <a class="redirectToPage" href="https://enjmin.cnam.fr/enjmin/programme-spawn-2025-1535161.kjsp?RH=1499863421832"> Programme spawn! 2025 </a> | <a class="redirectToPage" href="https://enjmin.cnam.fr/enjmin/cp-spawn-2025--1535160.kjsp?RH=1499863421832">  Communiqué de presse spawn! 2025 </a></p>
+                        <p class="info-title" data-key="info" data-change>© Cnam-Enjmin | <a class="redirectToPage" href="./mentions.html">Mentions légales</a> | <a class="redirectToPage" href="https://enjmin.cnam.fr/enjmin/programme-spawn-2025-1535161.kjsp?RH=1499863421832"> Programme spawn! 2025 </a> | <a class="redirectToPage" href="https://enjmin.cnam.fr/enjmin/cp-spawn-2025--1535160.kjsp?RH=1499863421832">  Communiqué de presse spawn! 2025 </a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="js/modifylang.js"></script>
 </body>
 
 </html>

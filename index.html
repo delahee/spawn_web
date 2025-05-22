@@ -6,10 +6,13 @@
 	<meta name="description" content="Page de contact du site Spawn! organisée par le CNAM-Enjmin et SO·Games" />
     <link rel="stylesheet" href="./css/spawn.css" />
     <link rel="stylesheet" href="css/header.css">
-	<title>spawn! - Le festival du jeu vidéo d'Angoulême</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    	<title data-key="titre" data-change>spawn! - Le festival du jeu vidéo d'Angoulême</title>
 	<link rel="icon" href="favicon.ico" />
 </head>
 <body>
+
 <header id="home" style="height: 250px;">
       <nav id="nav-wrap">
          <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
@@ -22,20 +25,24 @@
 			</div>
          <ul id="nav" class="nav">
          	
-			<li><a class="smoothscroll" href="#propos">À PROPOS</a></li>
-           <li><a class="smoothscroll" href="#billetterie">BILLETTERIE</a></li>
-           <li><a class="smoothscroll" href="#programme">PROGRAMME</a></li>
-           <li><a class="smoothscroll" href="#demi-journee">DEMI-JOURNÉE PRO</a></li>
-           <li><a class="smoothscroll" href="#organisateurs">PARTENAIRES</a></li>
-           <li><a class="smoothscroll" href="#infos">INFOS PRATIQUES</a></li>
-		   <li><a class="smoothscroll" href="spawn.html">ÉDITION 2024</a></li>
+			<li><a class="smoothscroll" href="#propos" data-key="apropos" data-change>À PROPOS</a></li>
+           <li><a class="smoothscroll" href="#billetterie" data-key="billeterie" data-change>BILLETTERIE</a></li>
+           <li><a class="smoothscroll" href="#programme" data-key="programme" data-change>PROGRAMME</a></li>
+           <li><a class="smoothscroll" href="#demi-journee" data-key="demijournée" data-change>DEMI-JOURNÉE PRO</a></li>
+           <li><a class="smoothscroll" href="#organisateurs" data-key="partenaires" data-change>PARTENAIRES</a></li>
+           <li><a class="smoothscroll" href="#infos" data-key="infospratiques" data-change>INFOS PRATIQUES</a></li>
+		   <li><a class="smoothscroll" href="spawn.html" data-key="edition2024" data-change>ÉDITION 2024</a></li>
          </ul> <!-- end #nav -->
+         <select id="modifyLang">
+            <option value="fr"  data-key="fr" data-change>Français</option>
+            <option value="en"  data-key="en" data-change>Anglais</option>
+        </select>
       </nav> <!-- end #nav-wrap -->
 </header> <!-- Header End -->
 
 		<section id="banner">
 			<div class="content">
-					<span class="text-wrapper">Le festival </br> du jeu vidéo d’Angoulême</span>
+					<span class="text-wrapper" data-key="festivalangouleme" data-change>Le festival du jeu vidéo d’Angoulême</span>
 			</div>
     	   	<div class="rectangle">
     	   			<img class="image-accueil" src="res/img/illustration accueil transparent.gif">
@@ -44,12 +51,12 @@
 
 		<section id="propos">
 			<div class="header">
-      			<h2>À PROPOS</h2>
+      			<h2 data-key="apropos" data-change>À PROPOS</h2>
       			<hr>
       				<div class="content">
                  		<p>
-                 			<span class="text-wrapper-spawn">spawn! </span><span class="text-wrapper-2"> revient pour une troisième édition</span><br />
-	                 		<p>Cet événement est organisé par le Cnam-Enjmin, la grande école publique du jeu vidéo et du numérique, SO· Games, l'association des professionnelles et professionnels du jeu vidéo en Nouvelle-Aquitaine et le Pôle Image Magelis, écosystème dédié au développement de la filière image en Charente. <br />
+                 			<span class="text-wrapper-spawn">spawn! </span><span class="text-wrapper-2" data-key="edition3" data-change> revient pour une troisième édition</span><br />
+	                 		<p data-key="evenement" data-change>Cet événement est organisé par le Cnam-Enjmin, la grande école publique du jeu vidéo et du numérique, SO· Games, l'association des professionnelles et professionnels du jeu vidéo en Nouvelle-Aquitaine et le Pôle Image Magelis, écosystème dédié au développement de la filière image en Charente. <br />
 	                 		 <span class="upper"> spawn! </span> c’est LE rendez-vous ludique incontournable de l’année à Angoulême. </p>
                     	</p>
                     </div>	
@@ -59,65 +66,68 @@
                     <div class="row">
                     	<div class="rectangle">
                     		<div class="rectangle2">
-                    			<span class="text-wrapper-2">QUAND ?</span>
-                    			<span class="text-wrapper-box">Samedi 5 avril 2025<br />	de 10h à 20h</span>
+                    			<span class="text-wrapper-2" data-key="quand" data-change>QUAND ?</span>
+                    			<span class="text-wrapper-box" data-key="date" data-change>Samedi 5 avril 2025 <br/> de 10h à 20h</span>
                     		</div>
                     	</div>
 
                     	<div class="rectangle3">
                     		<div class="rectangle4">
-                    			<span class="text-wrapper-2">OÙ ?</span>
-                    			<span class="text-wrapper-box">Cnam-Enjmin (bâtiment le Nil)<br /> 138 rue de Bordeaux <br /> 16000 Angoulême</span>
+                    			<span class="text-wrapper-2" data-key="ou" data-change>OÙ ?</span>
+                    			<span class="text-wrapper-box" data-key="batiment" data-change>Cnam-Enjmin (bâtiment le Nil)<br /> 138 rue de Bordeaux <br /> 16000 Angoulême</span>
                     		</div>
                     	</div> 
                     </div>
 
                     <div class="infos">
                     	<div class="rectangle5">
-                    			<span class="text-wrapper-2">Près de <span class="upper">100 jeux à tester :</span><br/> jeux indés, originaux, expériences inédites, réalité virtuelle...</span>
+                    			<span class="text-wrapper-2" data-key="jeux" data-change>Près de <span class="upper">100 jeux à tester :</span><br/> jeux indés, originaux, expériences inédites, réalité virtuelle...</span>
                     	</div>
 
                     	<div class="rectangle6">
-                    			<span class="text-wrapper-2"><span class="upper">4 tables rondes et conférences</span> sur la culture vidéoludique</span>
+                    			<span class="text-wrapper-2" data-key="culture" data-change><span class="upper">4 tables rondes et conférences</span> sur la culture vidéoludique</span>
                     	</div>
 
                     	<div class="rectangle7">
-                    			<span class="text-wrapper-2"><span class="upper">1 Podcast</span></span>
+                    			<span class="text-wrapper-2"><b>1 Podcast</b></span>
                     	</div>
                     </div>
 
                     <div class="infos">
                     	<div class="rectangle8">
-                    			<span class="text-wrapper-2"><span>Spectacles vidéoludiques</span>
+                    			<span class="text-wrapper-2" data-key="spectacles" data-change>Spectacles vidéoludiques</span>
                     	</div>
 
                     	<div class="rectangle9">
-                    			<span class="text-wrapper-2"><span class="upper">Rencontres</span> avec des <span class="upper">studios indépendants</span> de jeux vidéo </span>
+                    			<span class="text-wrapper-2" data-key="studios" data-change><span class="upper">Rencontres</span> avec des <span class="upper">studios indépendants</span> de jeux vidéo </span>
                     	</div>
 
                     	<div class="rectangle10">
-                    			<span class="text-wrapper-2"><span class="upper">Challenges : </span>Super Smash Bros, Mario Kart, Rocket League et Just Dance </span>
+                    			<span class="text-wrapper-2" data-key="challenges" data-change><span class="upper">Challenges : </span>Super Smash Bros, Mario Kart, Rocket League et Just Dance </span>
                     	</div>
                     </div>
 
                     <div class="row-item">
-                    	<span>Une demi-journée réservée au professionnelles et professionnels du jeu vidéo aura lieu le <span class="upper">vendredi 4 avril 2025.</span></span>
-                    	<div class="rectangle11"><span class="text-wrapper">Événement familial, gratuit, ouvert à toutes et tous sur inscription Eventbrite dans la limite des places disponibles.</span></div>
+                    	<span data-key="demijournéepro" data-change>Une demi-journée réservée au professionnelles et professionnels du jeu vidéo aura lieu le <span class="upper">vendredi 4 avril 2025.</span></span>
+                    	<div class="rectangle11">
+                            <span class="text-wrapper" data-key="evenementfamilial" data-change>Événement familial, gratuit, ouvert à toutes et tous sur inscription Eventbrite dans la limite des places disponibles.</span>
+                        </div>
                     </div>
 		</section>
 		<section id="billetterie">
 			<div class="header">
-				<h2>BILLETTERIE</h2>
+				<h2 data-key="billeterie" data-change>BILLETTERIE</h2>
       			<hr>
 			</div>
 			<div class="component">
 				<div class="content">
-					<p class="text-wrapper"><a href="https://www.eventbrite.com/e/billets-spawn-le-festival-du-jeu-video-dangouleme-1223204249839"> S’inscrire gratuitement</a></p>
-			</div>
+					<p class="text-wrapper" data-key="inscription" data-change><a href="https://www.eventbrite.com/e/billets-spawn-le-festival-du-jeu-video-dangouleme-1223204249839"> S’inscrire gratuitement</a></p>
+			     </div>
+            </div>
 		</section>
 		<section id="edition">
 			<div class="header">
-				<h2>RETOUR SUR L'ÉDITION PRÉCÉDENTE</h2>
+				<h2 data-key="lastedition" data-change>RETOUR SUR L'ÉDITION PRÉCÉDENTE</h2>
       			<hr>
 			</div>
 			<div class="video">
@@ -127,40 +137,40 @@
 		</section>
 		<section id="programme">
 			<div class="header">
-				<h2>PROGRAMME</h2>
+				<h2 data-key="programme" data-change>PROGRAMME</h2>
       			<hr>
 			</div>
             <div class="content">
-                    <p>De 10h à 18h : </p>
-                <ul class="ml-3">
-                    <li>
+                    <p data-key="h1018" data-change>De 10h à 18h : </p>
+                <ul class="ml-3" data-key="prog" data-change>
+                    <li data-key="testjeux" data-change>
                         Près de 100 jeux à tester : jeux indés, originaux, expériences inédites, réalité virtuelle... 
                     </li>
-                    <li>
+                    <li data-key="meetstudio" data-change>
                         Rencontres avec des studios indépendants de jeux vidéo
                     </li>
                     <li>
-                        Challenges : <a href="https://www.smashbros.com/fr_FR/">Super Smash Bros</a>, <a href="https://mariokart8.nintendo.com/fr/">Mario Kart</a>, <a href="https://www.rocketleague.com/fr"> Rocket League </a> et <a href="https://www.ubisoft.com/fr-fr/game/just-dance/2024">Just Dance</a>
+                        Challenges : <a href="https://www.smashbros.com/fr_FR/">Super Smash Bros</a>, <a href="https://mariokart8.nintendo.com/fr/">Mario Kart</a>, <a href="https://www.rocketleague.com/fr"> Rocket League</a> <span data-key="et" data-change> et </span> <a href="https://www.ubisoft.com/fr-fr/game/just-dance/2024">Just Dance</a>
                     </li>
-                    <li>
+                    <li data-key="capbd" data-change>
                         Cap BD expose 6 artistes : Beloup, Chario Spirale, Fanny MAREC, Garance ROYÈRE, Mecchi et Geoffroy Monde
                     </li>
-                    <li>
+                    <li data-key="expo" data-change>
                         Expo "Elles font le jeu vidéo" : panorama de 9 créatrices d’Ada LOVELACE à Julie LE BARON
                     </li>
-                    <li>
+                    <li data-key="aajh" data-change>
                         Stand Association Angoumoisine de Jeux et d'Histoire (AAJH) : jeux avec figurines et jeux de rôle
                     </li>
-                    <li>
+                    <li data-key="capgamearena" data-change>
                         CapGame Arena : une compétition accessible à toutes et à tous autour de 3 jeux (Street Fighter 6, Forza Motorsport et Efootball) organisée par CapGame, une association qui agit pour améliorer l’inclusion des personnes en situation de handicap à la vie numérique
                     </li>
                 </ul>
-                <p>De 11h à 20h : </p>
+                <p data-key="h1120" data-change>De 11h à 20h : </p>
                 <ul class="ml-3">
-                    <li>
-                        Programmation en amphithéâtre, animée par <a href="https://bsky.app/profile/dollywood.sbsky.social"> DollyWood </a>,<span class="bold"> créatrice de contenus et Camille ALEXANDRE (<a href="https://bsky.app/profile/quineapple.bsky.social">Quineapple </a>), co-rédactrice en chef et présentatrice de Jour de Play pour ARTE. </span>
+                    <li data-key="amphitheatre" data-change>
+                        Programmation en amphithéâtre, animée par <a href="https://bsky.app/profile/dollywood.sbsky.social"> DollyWood </a>,<span class="bold"> créatrice de contenus </span> et Camille ALEXANDRE (<a href="https://bsky.app/profile/quineapple.bsky.social">Quineapple</a>), <span class="bold"> co-rédactrice en chef et présentatrice de Jour de Play pour ARTE. </span>
                     </li>
-                    <li>
+                    <li data-key="YouTube" data-change>
                         La programmation de 11h à 18h30 sera diffusée en live et en replay sur la <a href="https://www.youtube.com/channel/UCIivvuWawHcNcgxdAdRm87w"> chaîne YouTube du Cnam-Enjmin </a> et interprétée en langue des signes française (LSF) grâce au soutien financier du <a href="https://www.sell.fr/"> SELL, le Syndicat des Éditeurs de Logiciels de Loisirs.</a>
                     </li>
                 </ul>
@@ -169,10 +179,10 @@
 
             <div class="mt-2 planning-container">
                 <div class="planning-element">
-                    <div class="time">11h00 <br>-<br> 11h45</div>
-                    <div class="title">PEGI, ESRB, pourquoi mettre un âge?</div>
+                    <div class="time" data-key="h111145" data-change>11h00 <br>-<br> 11h45</div>
+                    <div class="title" data-key="sujet1" data-change>PEGI, ESRB, pourquoi mettre un âge?</div>
                     <div class="description black">
-                        <p class="mb-0">
+                        <p class="mb-0" data-key="sujet1intervenants" data-change>
                             Catherine <span style="text-transform: uppercase; color:var(--c-black);"> Rolland </span>
                         <br>
                             Rémy <span style="text-transform: uppercase; color:var(--c-black);"> Devaux </span>
@@ -180,13 +190,13 @@
                             Mickaël <span style="text-transform: uppercase; color:var(--c-black);"> Newton </span>
                         </p>
                     </div>
-                    <div class="note">Table ronde </div>
+                    <div class="note" data-key="tableronde" data-change>Table ronde </div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">12h00 <br>-<br> 12h45</div>
-                    <div class="title">Jeux vidéo, cinéma, littérature : quand les médias s'adaptent</div>
+                    <div class="time" data-key="h121245" data-change>12h00 <br>-<br> 12h45</div>
+                    <div class="title" data-key="sujet2" data-change>Jeux vidéo, cinéma, littérature : quand les médias s'adaptent</div>
                     <div class="description black">
-                        <p class="mb-0">
+                        <p class="mb-0" data-key="sujet2intervenants" data-change>
                             <span style="text-transform: uppercase; color:var(--c-black);"> Luma </span>
                             <br>
                             David <span style="text-transform: uppercase; color:var(--c-black);"> Duriot </span>
@@ -194,13 +204,13 @@
                             Alexis <span style="text-transform: uppercase; color:var(--c-black);"> Blanchet </span>
                         </p>
                     </div>
-                    <div class="note">Table ronde</div>
+                    <div class="note" data-key="tableronde" data-change>Table ronde</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">13h00 <br>-<br> 14h00</div>
-                    <div class="title rose">Battle de dessin sur le thème du jeu vidéo</div>
+                    <div class="time" data-key="h1314" data-change>13h00 <br>-<br> 14h00</div>
+                    <div class="title rose" data-key="sujet3" data-change>Battle de dessin sur le thème du jeu vidéo</div>
                     <div class="description black">
-                        <p class="mb-0">
+                        <p class="mb-0" data-key="sujet3intervenants" data-change>
                             David <span style="text-transform: uppercase; color:var(--c-black);"> Duriot </span> - Animateur
                             <br>
                             4 auteurs · autrices de BD : 
@@ -217,22 +227,22 @@
                     <div class="note rose">Performance</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">14h00 <br>-<br> 14h45</div>
-                    <div class="title">Retour des salles d'arcade grâce à la réalité virtuelle (VR)</div>
+                    <div class="time" data-key="h141445" data-change>14h00 <br>-<br> 14h45</div>
+                    <div class="title" data-key="sujet4" data-change>Retour des salles d'arcade grâce à la réalité virtuelle (VR)</div>
                     <div class="description black">
-                        <p class="mb-0">
+                        <p class="mb-0" data-key="sujet4intervenants" data-change>
                             Pierre-Edouard <span style="text-transform: uppercase; color:var(--c-black);"> Nobels </span>
 							<br>
 							Pa Ming <span style="text-transform: uppercase; color:var(--c-black);"> Chiu </span>
                         </p>
                     </div>
-                    <div class="note">Table ronde</div>
+                    <div class="note" data-key="tableronde" data-change>Table ronde</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">15h00 <br>-<br> 15h45</div>
-                    <div class="title">Les zombies dans le jeu vidéo</div>
+                    <div class="time" data-key="h151545" data-change>15h00 <br>-<br> 15h45</div>
+                    <div class="title" data-key="sujet5" data-change>Les zombies dans le jeu vidéo</div>
                     <div class="description black">
-                        <p class="mb-0">
+                        <p class="mb-0" data-key="sujet5intervenants" data-change>
                             David <span style="text-transform: uppercase; color:var(--c-black);"> Elahee </span>
 							<br>
 							Mélissandre <span style="text-transform: uppercase; color:var(--c-black);"> Monatus </span>
@@ -240,10 +250,10 @@
 							Christophe <span style="text-transform: uppercase; color:var(--c-black);"> Butelet </span>
                         </p>
                     </div>
-                    <div class="note">Table ronde</div>
+                    <div class="note" data-key="tableronde" data-change>Table ronde</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">16h00 <br>-<br> 16h45</div>
+                    <div class="time" data-key="h161645" data-change>16h00 <br>-<br> 16h45</div>
                     <div class="title green"></div>
                     <div class="description black">
                         <p class="mb-0">
@@ -253,10 +263,10 @@
                     <div class="note green">Interview</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">17h00 <br>-<br> 18h30</div>
-                    <div class="title orange">Point'n Think (enregistrement en direct)</a></div>
+                    <div class="time" data-key="h171830" data-change>17h00 <br>-<br> 18h30</div>
+                    <div class="title orange" data-key="sujet7" data-change>Point'n Think (enregistrement en direct)</a></div>
                     <div class="description black">
-                        <p class="mb-0">
+                        <p class="mb-0" data-key="sujet7intervenants" data-change>
                             Julien <span style="text-transform: uppercase; color:var(--c-black);"> Djoubri </span>
                             <br>
                             Axel <span style="text-transform: uppercase; color:var(--c-black);"> Billoudet </span>
@@ -275,7 +285,7 @@
                     <div class="note orange">Podcast</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">19h00 <br>-<br> 20h00</div>
+                    <div class="time" data-key="h1920" data-change>19h00 <br>-<br> 20h00</div>
                     <div class="title blue"></div>
                     <div class="description black">
                         <p class="mb-0">
@@ -287,19 +297,19 @@
 		</section>	
 		<section id="demi-journee">
 			<div class="header">
-				<h2>DEMI-JOURNÉE RÉSERVÉE AUX PROS</h2>
+				<h2 data-key="demijournée2" data-change>DEMI-JOURNÉE RÉSERVÉE AUX PROS</h2>
       			<hr>
 			</div>
 			<div class="content">
-                    <p><span class="spawncolor upper">spawn!</span><span class="upper"> pro </span>  est un cycle de conférences et de rencontres entre professionnelles et professionnels de l’industrie qui aura lieu le vendredi 4 avril 2025 à partir de 14h.
+                    <p data-key="spawnpro" data-change><span class="spawncolor upper">spawn!</span><span class="upper"> pro </span>  est un cycle de conférences et de rencontres entre professionnelles et professionnels de l’industrie qui aura lieu le vendredi 4 avril 2025 à partir de 14h.
                     	<br />
                         <br>
                     Le but de cette manifestation est de diffuser les bonnes pratiques indies qui permettent de se professionnaliser.</p>
                     	<br/>
                     	<br/>
-                    <p>Au programme :</p>
+                    <p data-key="auprogramme" data-change>Au programme :</p>
                     
-                    <ul class="ml-3">
+                    <ul class="ml-3" data-key="spawnprogramme" data-change>
                         <li>Cycle de conférences de 14h à 18h10 (accessible aux étudiantes · étudiants)</li>
                         <li>Afterwork SO· Games de 18h30 à 21h30 (réservé aux pro)</li>
                         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeWB2leFRESKQR_53jr-AemeR-6LwVZFkafYEmp8-vOUknsEw/viewform"> Sur inscription</a></li>
@@ -307,8 +317,8 @@
             </div>
              <div class="mt-2 pb-3 planning-container planning-alt">
                 <div class="planning-element">
-                    <div class="time">14h00 <br>-<br> 14h10</div>
-                    <div class="title">Lancement</div>
+                    <div class="time" data-key="h141410" data-change>14h00 <br>-<br> 14h10</div>
+                    <div class="title" data-key="sujet9" data-change>Lancement</div>
                     <div class="description black">
                         <p class="mb-0">
                             SO·Games/Cnam-Enjmin
@@ -317,20 +327,20 @@
                     <div class="note">Introduction</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">14h10 <br>-<br> 14h20</div>
-                    <div class="title">Faciliter l'accès aux jeux vidéo pour les publics en situation de handicap</div>
+                    <div class="time" data-key="h14101420" data-change>14h10 <br>-<br> 14h20</div>
+                    <div class="title" data-key="sujet10" data-change>Faciliter l'accès aux jeux vidéo pour les publics en situation de handicap</div>
                     <div class="description black">
                         <p class="mb-0">
                             CapGame
                         </p>
                     </div>
-                    <div class="note">Vidéo</div>
+                    <div class="note" data-key="video" data-change>Vidéo</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">14h20 <br>-<br> 15h00</div>
-                    <div class="title">Développer des jeux engagés</div>
+                    <div class="time" data-key="h142015" data-change>14h20 <br>-<br> 15h00</div>
+                    <div class="title" data-key="sujet11" data-change>Développer des jeux engagés</div>
                     <div class="description black">
-                        <p class="mb-0">
+                        <p class="mb-0" data-key="sujet11intervenants" data-change>
                             Farhanaz "Joy" <span style="text-transform: uppercase; color:var(--c-black);"> Elahee </span> (animatrice)
                             <br>
                             Pierre <span style="text-transform: uppercase; color:var(--c-black);"> Corbinais </span>
@@ -338,55 +348,53 @@
                             Émi <span style="text-transform: uppercase; color:var(--c-black);"> Lefèvre </span>
                         </p>
                     </div>
-                    <div class="note">Table ronde</div>
+                    <div class="note" data-key="tableronde" data-change>Table ronde</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">15h05 <br>-<br> 15h45</div>
-                    <div class="title">Contrer les vagues : les communautés de jeux construisent l’inclusivité</div>
+                    <div class="time" data-key="h15051545" data-change>15h05 <br>-<br> 15h45</div>
+                    <div class="title" data-key="sujet12" data-change>Contrer les vagues : les communautés de jeux construisent l’inclusivité</div>
                     <div class="description black">
-                        <p class="mb-0">
+                        <p class="mb-0" data-key="sujet12intervenants" data-change>
                             Jennifer <span style="text-transform: uppercase; color:var(--c-black);"> Lufau </span>
                             <br>
                             Vanessa <span style="text-transform: uppercase; color:var(--c-black);"> Chicout </span>
-                            <br>
-                            Contrer les vagues : les communautés de jeux construisent l’inclusivité
                         </p>
                     </div>
-                    <div class="note">Conférence</div>
+                    <div class="note" data-key="conférence" data-change>Conférence</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">15h50 <br>-<br> 16h30</div>
-                    <div class="title">De Bomb Club à Fakutori ou comment développer un hobby ?</div>
+                    <div class="time" data-key="h15501630" data-change>15h50 <br>-<br> 16h30</div>
+                    <div class="title" data-key="sujet13" data-change>De Bomb Club à Fakutori ou comment développer un hobby ?</div>
                     <div class="description black">
-                        <p class="mb-0">
+                        <p class="mb-0" data-key="sujet13intervenants" data-change>
                             Antoine <span style="text-transform: uppercase; color:var(--c-black);"> Latour </span>
                         </p>
                     </div>
-                    <div class="note">Conférence</div>
+                    <div class="note" data-key="conférence" data-change>Conférence</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">16h35 <br>-<br> 17h15</div>
-                    <div class="title">Méta-jeu & Puzzle Games : Construction d'une épiphanie</div>
+                    <div class="time" data-key="h16351715" data-change>16h35 <br>-<br> 17h15</div>
+                    <div class="title" data-key="sujet14" data-change>Méta-jeu & Puzzle Games : Construction d'une épiphanie</div>
                     <div class="description black">
                         <p class="mb-0">
                             Lenophie
                         </p>
                     </div>
-                    <div class="note">Conférence</div>
+                    <div class="note" data-key="conférence" data-change>Conférence</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">17h20 <br>-<br> 18h00</div>
-                    <div class="title">  "Pas de politique dans mon jeu vidéo"... ou pas</a></div>
+                    <div class="time" data-key="h172018" data-change>17h20 <br>-<br> 18h00</div>
+                    <div class="title" data-key="sujet15" data-change>  "Pas de politique dans mon jeu vidéo"... ou pas</a></div>
                     <div class="description black">
                         <p class="mb-0">
                             Ache
                         </p>
                     </div>
-                    <div class="note">Conférence</div>
+                    <div class="note" data-key="conférence" data-change>Conférence</div>
                 </div>
                 <div class="planning-element">
-                    <div class="time">18h00 <br>-<br> 18h10</div>
-                    <div class="title">Mot de la fin</div>
+                    <div class="time" data-key="heure16" data-change>18h00 <br>-<br> 18h10</div>
+                    <div class="title" data-key="sujet16" data-change>Mot de la fin</div>
                     <div class="description black">
                         <p class="mb-0">
                             SO· Games
@@ -397,7 +405,7 @@
 		</section>
 		<section id="organisateurs">
 			<div class="header">
-				<h2>ORGANISATEURS</h2>
+				<h2 data-key="organisateurs" data-change>ORGANISATEURS</h2>
       			<hr>
 			</div>
 			<div class="image">
@@ -407,9 +415,9 @@
 		</section>
 		<section id="partenaires">
 			<div class="header">
-				<h2>PARTENAIRES</h2>
+				<h2 data-key="partenaires" data-change>PARTENAIRES</h2>
       			<hr>
-      			<p><span class="text-wrapper">Merci à tous nos partenaires de leur confiance</span>
+      			<p><span class="text-wrapper" data-key="remerciement" data-change>Merci à tous nos partenaires de leur confiance</span>
 			</div>
 			<div class="image">
 				<a href="https://www.magelis.org/"><img class="logo-magelis-blanc" src="./res/img/Logos partenaires/Logo Magelis blanc.png" alt="Logo Magelis"></a>
@@ -434,9 +442,9 @@
 		</section>	
 		<section id="infos">
 			<div class="header">
-				<h2>INFOS PRATIQUES</h2>
+				<h2 data-key="infospratiques" data-change>INFOS PRATIQUES</h2>
       			<hr>
-      			<p><span class="text-wrapper">PRÉPARER VOTRE VENUE</span>
+      			<p><span class="text-wrapper" data-key="venue" data-change>PRÉPARER VOTRE VENUE</span>
 			</div>
 			<div class="map">
                 <div class="img-container">
@@ -450,16 +458,16 @@
             </div>
             <div class="deplacement">
             	<div class="rectangle">
-            		<h1>EN VOITURE</h1>
-            		<p class="content">
-                        <span class="text-wrapper">Vous pouvez vous garer <br /> sur le parking gratuit du Musée de la BD <br />et emprunter ensuite la passerelle<br /></span>
+            		<h1 data-key="voiture" data-change>>EN VOITURE</h1>
+            		<p class="content" data-key="itinérairevoiture" data-change>
+                        <span class="text-wrapper" >Vous pouvez vous garer <br /> sur le parking gratuit du Musée de la BD <br />et emprunter ensuite la passerelle<br /></span>
                         <a href="https://enjmin.cnam.fr/medias/fichier/plancampus-enjmin_1500992127194-pdf?ID_FICHE=1327678&INLINE=FALSE" target="_blank" rel="noopener noreferrer"><span class="text-wrapper-2">( téléchargez le plan d'accès )</span></a>)
                     </p>
                 </div>
                 <div class="rectangle1">
-            		<h1>EN BUS</h1>
-            		<p class="content">
-                        <span class="text-wrapper">Descendez à l'arrêt de bus "Le Nil" <br />desservi par les lignes 5 et 3<br /> ou "La Cité" desservi par les lignes 6 et 9</span>
+            		<h1 data-key="bus" data-change>EN BUS</h1>
+            		<p class="content" data-key="itinérairebus" data-change>
+                        <span class="text-wrapper" >Descendez à l'arrêt de bus "Le Nil" <br />desservi par les lignes 5 et 3<br /> ou "La Cité" desservi par les lignes 6 et 9</span>
                         <a href="https://www.stga.fr/"><span class="text-wrapper-2">( plus d'information )</span></a>)
                     </p>
             	</div>
@@ -474,7 +482,7 @@
             	<div class="upper-container">
                 	<div class="footerElement-section">
                     	<div class="colored-box">
-                        	<p class="info-title">Réseaux sociaux</p>
+                        	<p class="info-title" data-key="reseauxsociaux" data-change>Réseaux sociaux</p>
                     	</div>
                     	<div class="reseaux">
                         	<a href="https://facebook.com/spawnfestival">
@@ -497,12 +505,12 @@
 
                 	<div class="footerElement-section">
                     	<div class="colored-box">
-                        	<p class="info-title"><a class="redirectToPage" href="./contacts.html">Contact et équipe</a></p>
+                        	<p class="info-title" data-key="contact" data-change><a class="redirectToPage" href="./contacts.html">Contact et équipe</a></p>
                     	</div>
                 	</div>
                 <div class="footerElement-section">
                     <div class="colored-box">
-                        <p class="info-title">Organisateurs</p>
+                        <p class="info-title" data-key="organisateursmin" data-change>Organisateurs</p>
                     </div>
                     <div class="Organisateurs">
                         <a href="https://enjmin.cnam.fr/">
@@ -520,11 +528,12 @@
                         	<img class="img" alt="Spawn Icon" src="./res/img/Spawnicon.png" />
                     	</div>
                     	<div class="">
-                        	<p class="info-title">© Cnam-Enjmin | <a class="redirectToPage" href="./mentions.html">Mentions légales</a> | <a class="redirectToPage" href="https://enjmin.cnam.fr/enjmin/programme-spawn-2025-1535161.kjsp?RH=1499863421832"> Programme spawn! 2025 </a> | <a class="redirectToPage" href="https://enjmin.cnam.fr/enjmin/cp-spawn-2025--1535160.kjsp?RH=1499863421832">  Communiqué de presse spawn! 2025 </a></p>
+                        	<p class="info-title" data-key="info" data-change>© Cnam-Enjmin | <a class="redirectToPage" href="./mentions.html">Mentions légales</a> | <a class="redirectToPage" href="https://enjmin.cnam.fr/enjmin/programme-spawn-2025-1535161.kjsp?RH=1499863421832"> Programme spawn! 2025 </a> | <a class="redirectToPage" href="https://enjmin.cnam.fr/enjmin/cp-spawn-2025--1535160.kjsp?RH=1499863421832">  Communiqué de presse spawn! 2025 </a></p>
                     	</div>
                 	</div>
             	</div>
         	</div>
     	</section>
+       <script src="js/modifylang.js"></script>
 	</body>
 </html>

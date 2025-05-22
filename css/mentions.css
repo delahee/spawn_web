@@ -18,6 +18,12 @@ p .coordination-g-n {
     color: white;
 }
 
+select {
+    font-size: 0.9rem;
+    font-family: 'DINosaur';
+    padding: 3px 30px;
+}
+
 .smallerText {
     font-size: 16px;
     font-family: "DINosaur";
